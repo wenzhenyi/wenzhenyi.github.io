@@ -1,180 +1,237 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-    <!--Setting-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="博客-Wenzy">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no,email=no,adress=no">
-    <meta name="browsermode" content="application">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="theme-version" content="1.2.3">
-    <meta name="root" content="/">
-    <link rel="dns-prefetch" href="https://wenzhenyi.github.io">
-    <!--SEO-->
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<meta name="keywords" content="hexo" />
+<link rel="stylesheet" href="/css/main.css">
 
 
-<meta name="description" content="什么是Hexo？Hexo是一个快速、简洁且高效的博客框架。基于node.js；支持MarkDown语法；可扩展性强；博客主题众多，。
-开始搭建1. 安装Hexo所需环境：
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-node
-git 
-..." />
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wenzhenyi.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="什么是Hexo？Hexo是一个快速、简洁且高效的博客框架。基于node.js；支持MarkDown语法；可扩展性强；博客主题众多，。 开始搭建1. 安装Hexo所需环境：  node git   利用npm安装Hexo 1$ npm install -g hexo-cli hexo  2. 本地搭建Hexo 安装 Hexo 完成后，进入电脑的文件夹内打开控制台(shift + 右键 -&gt; 在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何用Hexo和Git搭建一个免费的线上博客">
+<meta property="og:url" content="https://wenzhenyi.github.io/2020/02/19/buildHexoBlog/index.html">
+<meta property="og:site_name" content="Blog For Wenzy">
+<meta property="og:description" content="什么是Hexo？Hexo是一个快速、简洁且高效的博客框架。基于node.js；支持MarkDown语法；可扩展性强；博客主题众多，。 开始搭建1. 安装Hexo所需环境：  node git   利用npm安装Hexo 1$ npm install -g hexo-cli hexo  2. 本地搭建Hexo 安装 Hexo 完成后，进入电脑的文件夹内打开控制台(shift + 右键 -&gt; 在">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wenzhenyi.github.io/2020/02/19/buildHexoBlog/theme1.png">
+<meta property="og:image" content="https://wenzhenyi.github.io/2020/02/19/buildHexoBlog/theme2.png">
+<meta property="og:image" content="https://wenzhenyi.github.io/2020/02/19/buildHexoBlog/gulp.png">
+<meta property="og:image" content="https://wenzhenyi.github.io/2020/02/19/buildHexoBlog/gulp2.png">
+<meta property="og:image" content="https://wenzhenyi.github.io/2020/02/19/buildHexoBlog/git2.png">
+<meta property="og:image" content="https://wenzhenyi.github.io/2020/02/19/buildHexoBlog/set1.png">
+<meta property="og:image" content="https://wenzhenyi.github.io/2020/02/19/buildHexoBlog/git1.png">
+<meta property="article:published_time" content="2020-02-19T06:45:07.000Z">
+<meta property="article:modified_time" content="2021-07-07T02:49:46.475Z">
+<meta property="article:author" content="Wenzy">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wenzhenyi.github.io/2020/02/19/buildHexoBlog/theme1.png">
+
+<link rel="canonical" href="https://wenzhenyi.github.io/2020/02/19/buildHexoBlog/">
 
 
-<meta name="robots" content="all" />
-<meta name="google" content="all" />
-<meta name="googlebot" content="all" />
-<meta name="verify" content="all" />
-    <!--Title-->
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
 
-<title>
-    
-    如何用Hexo和Git搭建一个免费的线上博客 |
-    
-    博客-Wenzy
-</title>
-
-<link rel="alternate" href="/atom.xml" title="博客-Wenzy" type="application/atom+xml">
+  <title>如何用Hexo和Git搭建一个免费的线上博客 | Blog For Wenzy</title>
+  
 
 
-<link rel="icon" href="/favicon.ico">
-
-    
 
 
-<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
-<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
-<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
 
-    
-<div class="hide">
-    <script type="text/javascript">
-    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-    </script>
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Blog For Wenzy" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Blog For Wenzy</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
 </div>
 
 
 
 
-    
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
-<meta name="generator" content="Hexo 4.2.0"></head>
-<!--[if lte IE 8]>
-<style>
-    html{ font-size: 1em }
-</style>
-<![endif]-->
-<!--[if lte IE 9]>
-<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
-<![endif]-->
-<body>
-    <header class="main-header"  style="background-image:url(
-    /./img/3.jpg)"
-     >
-    <div class="main-header-box">
-        <a class="header-avatar" href="/" title='Wenzy'>
-            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
-        <div class="branding">
-            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
-            
-            <h2>
-                学习使人快乐
-            </h2>
-            
-        </div>
-    </div>
-</header>
-    <nav class="main-navigation">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                        <span class="sr-only"></span>
-                        <i class="fa fa-bars"></i>
-                    </span>
-                    <a class="navbar-brand" href="https://wenzhenyi.github.io">
-                        博客-Wenzy</a>
-                </div>
-                <div class="collapse navbar-collapse" id="main-menu">
-                    <ul class="menu">
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/"><i class="fa "></i>
-                                首页</a>
-                        </li>
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/archives/"><i class="fa "></i>
-                                时间轴</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+      </li>
+  </ul>
 </nav>
-    <section class="content-wrap">
-        <div class="container">
-            <div class="row">
-                <main class="col-md-8 main-content m-post">
-                    <p id="process"></p>
-<article class="post">
-    <div class="post-head">
-        <h1 id="如何用Hexo和Git搭建一个免费的线上博客">
-            
-            如何用Hexo和Git搭建一个免费的线上博客
-            
-        </h1>
-        <div class="post-meta">
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-            <a class="tag-link" href="/tags/hexo/" rel="tag">hexo</a>
-            
-        </span>
-    </span>
-    
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">
-            2020/02/19</span>
-    </span>
-    
-    
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
 </div>
-        
-        
-        <p class="fa fa-exclamation-triangle warning">
-            本文于<strong>
-                504</strong>
-            天之前发表，文中内容可能已经过时。
-        </p>
-        
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
     </div>
+  </div>
+
+</div>
+    </header>
+
     
-    <div class="post-body post-content">
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wenzhenyi.github.io/2020/02/19/buildHexoBlog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Wenzy">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog For Wenzy">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何用Hexo和Git搭建一个免费的线上博客
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-19 14:45:07" itemprop="dateCreated datePublished" datetime="2020-02-19T14:45:07+08:00">2020-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-07 10:49:46" itemprop="dateModified" datetime="2021-07-07T10:49:46+08:00">2021-07-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
         <h1 id="什么是Hexo？"><a href="#什么是Hexo？" class="headerlink" title="什么是Hexo？"></a>什么是Hexo？</h1><p>Hexo是一个快速、简洁且高效的博客框架。基于node.js；支持MarkDown语法；可扩展性强；博客主题众多，。</p>
 <h1 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h1><h2 id="1-安装Hexo"><a href="#1-安装Hexo" class="headerlink" title="1. 安装Hexo"></a>1. 安装Hexo</h2><p>所需环境：</p>
 <ul>
@@ -264,90 +321,197 @@ git
 </ol>
 
     </div>
-    
-    <div class="post-footer">
-        <div>
-            
-            转载声明：
-            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
-            
-            
-        </div>
-        <div>
-            
-        </div>
-    </div>
-</article>
-<div class="article-nav prev-next-wrap clearfix">
-    
-    <a href="/2020/02/24/%E9%9D%99%E4%B8%8B%E6%9D%A5%E5%A5%BD%E5%A5%BD%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%BD%91%E7%AB%99/" class="pre-post btn btn-default" title='静下来好好学习的网站'>
-        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-        <span class="hidden-xs">
-            静下来好好学习的网站</span>
-    </a>
-    
-    
-    <a href="/2020/02/17/hello-world/" class="next-post btn btn-default" title='Hello World'>
-        <span class="hidden-lg">下一篇</span>
-        <span class="hidden-xs">
-            Hello World</span><i class="fa fa-angle-right fa-fw"></i>
-    </a>
-    
-</div>
 
-                </main>
-                
-                    <aside id="article-toc" role="navigation" class="col-md-4">
-    <div class="widget">
-        <h3 class="title">
-            文章目录
-        </h3>
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+          </div>
+
         
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是Hexo？"><span class="toc-text">什么是Hexo？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开始搭建"><span class="toc-text">开始搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装Hexo"><span class="toc-text">1. 安装Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-本地搭建Hexo"><span class="toc-text">2. 本地搭建Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-下载主题（如果想用原装主题的可跳过）"><span class="toc-text">3. 下载主题（如果想用原装主题的可跳过）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-在外网上挂载项目"><span class="toc-text">4. 在外网上挂载项目</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#记录遇到的BUG"><span class="toc-text">记录遇到的BUG</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#系统上禁止运行脚本："><span class="toc-text">系统上禁止运行脚本：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SyntaxError-Invalid-regular-expression-flags"><span class="toc-text">SyntaxError: Invalid regular expression flags</span></a></li></ol></li></ol>
+
+
         
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/17/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/24/%E9%9D%99%E4%B8%8B%E6%9D%A5%E5%A5%BD%E5%A5%BD%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%BD%91%E7%AB%99/" rel="next" title="静下来好好学习的网站">
+      静下来好好学习的网站 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-</aside>
-                
-            </div>
-        </div>
-    </section>
-    <footer class="main-footer">
-    <div class="container">
-        <div class="row">
-        </div>
-    </div>
-</footer>
-<a id="back-to-top" class="icon-btn hide">
-    <i class="fa fa-chevron-up"></i>
-</a>
-    <div class="copyright">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="busuanzi">
+      </footer>
     
-</div>
-            </div>
-            <div class="col-sm-12">
-                <span>Copyright &copy;
-                    2017
-                    
-                </span> |
-                <span>
-                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
-                </span> |
-                <span>
-                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
-                </span>
-            </div>
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
         </div>
-    </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是Hexo？"><span class="nav-number">1.</span> <span class="nav-text">什么是Hexo？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始搭建"><span class="nav-number">2.</span> <span class="nav-text">开始搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装Hexo"><span class="nav-number">2.1.</span> <span class="nav-text">1. 安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-本地搭建Hexo"><span class="nav-number">2.2.</span> <span class="nav-text">2. 本地搭建Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-下载主题（如果想用原装主题的可跳过）"><span class="nav-number">2.3.</span> <span class="nav-text">3. 下载主题（如果想用原装主题的可跳过）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-在外网上挂载项目"><span class="nav-number">2.4.</span> <span class="nav-text">4. 在外网上挂载项目</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#记录遇到的BUG"><span class="nav-number">3.</span> <span class="nav-text">记录遇到的BUG</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统上禁止运行脚本："><span class="nav-number">3.1.</span> <span class="nav-text">系统上禁止运行脚本：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SyntaxError-Invalid-regular-expression-flags"><span class="nav-number">3.2.</span> <span class="nav-text">SyntaxError: Invalid regular expression flags</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Wenzy</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
 </div>
 
 
 
+      </div>
 
-<script src="/js/app.js?rev=@@hash.js"></script>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wenzy</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
 
 </body>
 </html>
