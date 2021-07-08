@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="博客-Wenzy">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://wenzhenyi.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="" />
+
+
+<meta name="description" content="1. AutoFileName自动补充文件名
+2. Chinese适用于 VS Code 的中文（简体）语言包
+3. Code Runner用于跑小小一段的代码
+4. Git History D..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    vsCode中常用的插件 |
+    
+    博客-Wenzy
+</title>
+
+<link rel="alternate" href="/atom.xml" title="博客-Wenzy" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    /./img/3.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Wenzy'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                学习使人快乐
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://wenzhenyi.github.io">
+                        博客-Wenzy</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="vsCode中常用的插件">
+            
+            vsCode中常用的插件
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2020/03/26</span>
+    </span>
+    
+    
+</div>
+        
+        
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                468</strong>
+            天之前发表，文中内容可能已经过时。
+        </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="1-AutoFileName"><a href="#1-AutoFileName" class="headerlink" title="1. AutoFileName"></a>1. AutoFileName</h2><p>自动补充文件名</p>
+<h2 id="2-Chinese"><a href="#2-Chinese" class="headerlink" title="2. Chinese"></a>2. Chinese</h2><p>适用于 VS Code 的中文（简体）语言包</p>
+<h2 id="3-Code-Runner"><a href="#3-Code-Runner" class="headerlink" title="3. Code Runner"></a>3. Code Runner</h2><p>用于跑小小一段的代码</p>
+<h2 id="4-Git-History-Diff"><a href="#4-Git-History-Diff" class="headerlink" title="4. Git History Diff"></a>4. Git History Diff</h2><p>查看git的历史记录以及比较</p>
+<h2 id="5-JavaScript-ES6-code-snippets"><a href="#5-JavaScript-ES6-code-snippets" class="headerlink" title="5. JavaScript(ES6) code snippets"></a>5. JavaScript(ES6) code snippets</h2><p>自动补充es6语法</p>
+<h2 id="6-Live-Server"><a href="#6-Live-Server" class="headerlink" title="6. Live Server"></a>6. Live Server</h2><p>在当前文件夹创建小型服务器</p>
+<h2 id="7-Open-in-Browser"><a href="#7-Open-in-Browser" class="headerlink" title="7. Open in Browser"></a>7. Open in Browser</h2><p>右键从浏览器打开此文件</p>
+<h2 id="8-Prettier-Code-formatter"><a href="#8-Prettier-Code-formatter" class="headerlink" title="8. Prettier - Code formatter"></a>8. Prettier - Code formatter</h2><p>格式化代码</p>
+<h2 id="9-Vetur"><a href="#9-Vetur" class="headerlink" title="9. Vetur"></a>9. Vetur</h2><p>vue集成的工具</p>
+<h2 id="10-VS-Color-Picker"><a href="#10-VS-Color-Picker" class="headerlink" title="10. VS Color Picker"></a>10. VS Color Picker</h2><p>颜色选择器</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2020/05/01/css%E7%89%B9%E6%AE%8A%E6%80%A7/" class="pre-post btn btn-default" title='css特殊性'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            css特殊性</span>
+    </a>
+    
+    
+    <a href="/2020/03/17/JS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="next-post btn btn-default" title='JS设计模式 - 面向对象'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            JS设计模式 - 面向对象</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-AutoFileName"><span class="toc-text">1. AutoFileName</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Chinese"><span class="toc-text">2. Chinese</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Code-Runner"><span class="toc-text">3. Code Runner</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Git-History-Diff"><span class="toc-text">4. Git History Diff</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-JavaScript-ES6-code-snippets"><span class="toc-text">5. JavaScript(ES6) code snippets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Live-Server"><span class="toc-text">6. Live Server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Open-in-Browser"><span class="toc-text">7. Open in Browser</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Prettier-Code-formatter"><span class="toc-text">8. Prettier - Code formatter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-Vetur"><span class="toc-text">9. Vetur</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-VS-Color-Picker"><span class="toc-text">10. VS Color Picker</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

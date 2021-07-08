@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="博客-Wenzy">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://wenzhenyi.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="" />
+
+
+<meta name="description" content="类和对象的概念
+类就是拥有相等功能和相同的属性的对象的集合 – 抽象的对象就是类的实例 – 具体
+
+生活角度看类和对象
+如果人是类，小名就是对象、小花也是对象如果电脑是类，桌上的这两台电脑就是对..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    JS设计模式 - 面向对象 |
+    
+    博客-Wenzy
+</title>
+
+<link rel="alternate" href="/atom.xml" title="博客-Wenzy" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    /./img/3.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Wenzy'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                学习使人快乐
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://wenzhenyi.github.io">
+                        博客-Wenzy</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="JS设计模式 - 面向对象">
+            
+            JS设计模式 - 面向对象
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2020/03/17</span>
+    </span>
+    
+    
+</div>
+        
+        
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                477</strong>
+            天之前发表，文中内容可能已经过时。
+        </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="类和对象的概念"><a href="#类和对象的概念" class="headerlink" title="类和对象的概念"></a>类和对象的概念</h2><blockquote>
+<p>类就是拥有相等功能和相同的属性的对象的集合 – 抽象的<br>对象就是类的实例 – 具体</p>
+</blockquote>
+<p>生活角度看类和对象</p>
+<p>如果人是类，小名就是对象、小花也是对象<br>如果电脑是类，桌上的这两台电脑就是对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">  constructor(name, age) &#123;</span><br><span class="line">    this.name &#x3D; name;</span><br><span class="line">    this.age &#x3D; age;</span><br><span class="line">  &#125;</span><br><span class="line">  say() &#123;</span><br><span class="line">    alert(&#96;$&#123;this.name&#125; is eating&#96;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 调用</span><br><span class="line">var wang &#x3D; new Person(&quot;wang&quot;, 20); &#x2F;&#x2F; 初始化小王</span><br><span class="line">wang.say();  &#x2F;&#x2F; wang is eating</span><br><span class="line">var zhang &#x3D; new Person(&quot;zhang&quot;, 50); &#x2F;&#x2F; 初始化小张</span><br><span class="line">zhang.say(); &#x2F;&#x2F; zhang is eating</span><br></pre></td></tr></table></figure>
+
+<h2 id="面向对象三要素：封装，继承，多态"><a href="#面向对象三要素：封装，继承，多态" class="headerlink" title="面向对象三要素：封装，继承，多态"></a>面向对象三要素：封装，继承，多态</h2><h3 id="继承（子类继承父类）"><a href="#继承（子类继承父类）" class="headerlink" title="继承（子类继承父类）"></a>继承（子类继承父类）</h3><blockquote>
+<p>作用：继承可将公共方法抽离出来，提高复用，减少冗余</p>
+</blockquote>
+<p>Person类与上面的类一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Student extends Person &#123;</span><br><span class="line">  constructor(name, age, number) &#123;</span><br><span class="line">    super(name, age);</span><br><span class="line">    this.number &#x3D; number;</span><br><span class="line">  &#125;</span><br><span class="line">  study() &#123;</span><br><span class="line">    alert(&#96;$&#123;this.name&#125; is studing&#96;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var xiaoming &#x3D; new Student(&#39;xiaoming&#39;, 10, &#39;A1&#39;);</span><br><span class="line">xiaoming.say();   &#x2F;&#x2F; xiaoming is eating</span><br><span class="line">xiaoming.study(); &#x2F;&#x2F; xiaoming is studing</span><br></pre></td></tr></table></figure>
+
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><blockquote>
+<p>目前ts内可用，比较规范 以下代码需ts环境下运行 <a href="http://www.typescriptlang.org/play/" target="_blank" rel="noopener">http://www.typescriptlang.org/play/</a></p>
+</blockquote>
+<ul>
+<li><ol>
+<li>public 完全开放</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>protected 对子类开放</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>private 对自己开放</li>
+</ol>
+</li>
+</ul>
+<p>作用：</p>
+<ul>
+<li><ol>
+<li>减少耦合，不该外露的不外露</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>利于数据，接口的权限管理</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>ES6暂时不支持，一般认为 _开头的属性是private</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">  name: any</span><br><span class="line">  age: number</span><br><span class="line">  protected weight: any &#x2F;&#x2F; 受保护的属性，只有自己或者子类可以访问</span><br><span class="line">  constructor(name: any, age: number) &#123;</span><br><span class="line">    this.name &#x3D; name;</span><br><span class="line">    this.age &#x3D; age;</span><br><span class="line">    this.weight &#x3D; 120</span><br><span class="line">  &#125;</span><br><span class="line">  say() &#123;</span><br><span class="line">    alert(&#96;$&#123;this.name&#125; is eating&#96;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Student extends Person &#123;</span><br><span class="line">  number: number</span><br><span class="line">  private girlfriend: any</span><br><span class="line">  constructor(name: any, age: number, number: number) &#123;</span><br><span class="line">    super(name, age);</span><br><span class="line">    this.number &#x3D; number;</span><br><span class="line">    this.girlfriend &#x3D; &#39;xiaoli&#39;</span><br><span class="line">  &#125;</span><br><span class="line">  study() &#123;</span><br><span class="line">    alert(&#96;$&#123;this.name&#125; is studing&#96;);</span><br><span class="line">  &#125;</span><br><span class="line">  getWeight() &#123;</span><br><span class="line">    alert(&#96;weight $&#123;this.weight&#125;&#96;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let xiaoming &#x3D; new Student(&#39;xiaoming&#39;, 10, 12)</span><br><span class="line">xiaoming.getWeight()</span><br></pre></td></tr></table></figure>
+
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><blockquote>
+<p>同一个接口，不同的实现<br>JS 应用极少<br>需要结合Java等语言的接口，重写，重载等功能</p>
+</blockquote>
+<p>作用：</p>
+<ul>
+<li>保持了子类的开放性和灵活性</li>
+<li>面向接口编程(JS引用较少)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class A extends Person &#123;</span><br><span class="line">  constructor(name) &#123;</span><br><span class="line">    super(name)</span><br><span class="line">  &#125;</span><br><span class="line">  saySomething() &#123;</span><br><span class="line">    alert(&quot;Im A&quot;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class B extends Person &#123;</span><br><span class="line">  constructor(name) &#123;</span><br><span class="line">    super(name)</span><br><span class="line">  &#125;</span><br><span class="line">  saySomething() &#123;</span><br><span class="line">    alert(&quot;Im B&quot;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let a &#x3D; new A(&#39;A&#39;)</span><br><span class="line">a.saySomething() &#x2F;&#x2F; Im A</span><br><span class="line">let b &#x3D; new B(&#39;B&#39;)</span><br><span class="line">b.saySomething() &#x2F;&#x2F; Im B</span><br></pre></td></tr></table></figure>
+
+<h2 id="JS应用面向对象实例："><a href="#JS应用面向对象实例：" class="headerlink" title="JS应用面向对象实例："></a>JS应用面向对象实例：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * -----------------------------------------------------------------</span><br><span class="line"> * JS应用实例</span><br><span class="line"> * JQuery</span><br><span class="line"> *&#x2F;</span><br><span class="line"></span><br><span class="line">class JQuery &#123;</span><br><span class="line">  constructor(selector) &#123;</span><br><span class="line">    let slice &#x3D; Array.prototype.slice</span><br><span class="line">    let dom &#x3D; slice.call(document.querySelectorAll(selector))</span><br><span class="line">    let len &#x3D; dom ? dom.length : 0</span><br><span class="line">    for (let i &#x3D; 0; i &lt; len; i++) &#123;</span><br><span class="line">      this[i] &#x3D; dom[i]</span><br><span class="line">    &#125;</span><br><span class="line">    this.length &#x3D; len</span><br><span class="line">    this.selector &#x3D; selector</span><br><span class="line">  &#125;</span><br><span class="line">  append(node) &#123;</span><br><span class="line">    &#x2F;&#x2F; ...</span><br><span class="line">  &#125;</span><br><span class="line">  addClass(name) &#123;</span><br><span class="line">    &#x2F;&#x2F; ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">window.$ &#x3D; function(selector) &#123;</span><br><span class="line">  &#x2F;&#x2F; 工厂模式</span><br><span class="line">  return new JQuery(selector)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="为什么要使用面向对象"><a href="#为什么要使用面向对象" class="headerlink" title="为什么要使用面向对象"></a>为什么要使用面向对象</h2><blockquote>
+<p>程序执行：顺序，判断，循环  —结构化</p>
+</blockquote>
+<blockquote>
+<p>面向对象 — 数据结构化</p>
+</blockquote>
+<p>对于计算机，结构化的东西才是最简单的</p>
+<p>编程应该 简单 &amp; 抽象</p>
+<h2 id="使用面向对象意义"><a href="#使用面向对象意义" class="headerlink" title="使用面向对象意义"></a>使用面向对象意义</h2><p><strong>数据结构化</strong></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2020/03/26/vsCode%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6/" class="pre-post btn btn-default" title='vsCode中常用的插件'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            vsCode中常用的插件</span>
+    </a>
+    
+    
+    <a href="/2020/03/13/Gulp%E5%AD%A6%E4%B9%A0/" class="next-post btn btn-default" title='Gulp学习'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            Gulp学习</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#类和对象的概念"><span class="toc-text">类和对象的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象三要素：封装，继承，多态"><span class="toc-text">面向对象三要素：封装，继承，多态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#继承（子类继承父类）"><span class="toc-text">继承（子类继承父类）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#封装"><span class="toc-text">封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多态"><span class="toc-text">多态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS应用面向对象实例："><span class="toc-text">JS应用面向对象实例：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要使用面向对象"><span class="toc-text">为什么要使用面向对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用面向对象意义"><span class="toc-text">使用面向对象意义</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

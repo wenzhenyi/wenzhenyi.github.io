@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="博客-Wenzy">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://wenzhenyi.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="css" />
+
+
+<meta name="description" content="问题：在一列里，div之间自适应等高，内容垂直居中
+html：
+1234567&lt;div class&#x3D;&quot;wrap&quot;&gt;  &lt;div class&#x3..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    css等高的方式 |
+    
+    博客-Wenzy
+</title>
+
+<link rel="alternate" href="/atom.xml" title="博客-Wenzy" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    /./img/3.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Wenzy'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                学习使人快乐
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://wenzhenyi.github.io">
+                        博客-Wenzy</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="css等高的方式">
+            
+            css等高的方式
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-link" href="/tags/css/" rel="tag">css</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2020/02/25</span>
+    </span>
+    
+    
+</div>
+        
+        
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                498</strong>
+            天之前发表，文中内容可能已经过时。
+        </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p><strong>问题：在一列里，div之间自适应等高，内容垂直居中</strong></p>
+<p>html：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;wrap&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;item&quot;&gt;AAAA&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;item&quot;&gt;BBBBBBBBBBBBBBBBBB&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;item&quot;&gt;A&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;item&quot;&gt;CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;item&quot;&gt;A&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>css：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;</span><br><span class="line">  width: 10%;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  word-break: break-all;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-使用css-Flex布局"><a href="#1-使用css-Flex布局" class="headerlink" title="1. 使用css Flex布局"></a>1. 使用css Flex布局</h2><p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener" title="flex布局">flex布局文档</a></p>
+<p>父div设置<code>display: flex</code>时，子div可等高</p>
+<p>css：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.wrap&#123;</span><br><span class="line">  display: flex; &#x2F;&#x2F; 等高</span><br><span class="line">&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">  display: flex;  &#x2F;&#x2F; 内容垂直居中</span><br><span class="line">  align-items:center; &#x2F;&#x2F; 内容垂直居中</span><br><span class="line">  justify-content:center; &#x2F;&#x2F; 内容垂直居中</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下图所示：</p>
+<p><img src="/2020/02/25/css%E7%AD%89%E9%AB%98%E7%9A%84%E6%96%B9%E5%BC%8F/css1.png" alt="css1"></p>
+<hr>
+<h2 id="2-使用css-Table布局"><a href="#2-使用css-Table布局" class="headerlink" title="2. 使用css Table布局"></a>2. 使用css Table布局</h2><p>css：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.wrap&#123;</span><br><span class="line">  display: table;</span><br><span class="line">&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">  display: table-cell;</span><br><span class="line">  text-align: center;</span><br><span class="line">  vertical-align: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果跟上面一样</p>
+<p>优点：支持ie8/ie9</p>
+<hr>
+<h2 id="3-使用CSS-网格Grid"><a href="#3-使用CSS-网格Grid" class="headerlink" title="3. 使用CSS 网格Grid"></a>3. 使用CSS 网格Grid</h2><p><a href="http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html" target="_blank" rel="noopener" title="Grid布局">Grid布局文档</a></p>
+<p>css：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.wrap&#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-gap: 10px;</span><br><span class="line">  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));</span><br><span class="line">&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  word-break: break-all;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  margin: auto 0;</span><br><span class="line">  text-align: center;</span><br><span class="line">  align-self: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>暂未实现通过grid实现内容垂直居中，效果如下：</p>
+<p><img src="/2020/02/25/css%E7%AD%89%E9%AB%98%E7%9A%84%E6%96%B9%E5%BC%8F/css2.png" alt="css2"></p>
+<p>缺点：兼容性问题差，ie不兼容，个人感觉难上手</p>
+<h2 id="4-使用CSS-padding-bottom-margin-bottom正负值相抵-等高"><a href="#4-使用CSS-padding-bottom-margin-bottom正负值相抵-等高" class="headerlink" title="4. 使用CSS padding-bottom|margin-bottom正负值相抵 (等高)"></a>4. 使用CSS padding-bottom|margin-bottom正负值相抵 (等高)</h2><p>首先把列的padding-bottom设为一个足够大的值，再把列的margin-bottom设一个与前面的padding- bottom的正值相抵消的负值，父容器设置超出隐藏，这样子父容器的高度就还是它里面的列没有设定padding-bottom时的高度，当它里面的任 一列高度增加了，则父容器的高度被撑到它里面最高那列的高度，其他比这列矮的列则会用它们的padding-bottom来补偿这部分高度差。因为背景是 可以用在padding占用的空间里的，而且边框也是跟随padding变化的，所以就成功的完成了一个障眼法。</p>
+<p>css:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.wrap&#123;</span><br><span class="line">  width: 52%;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">  width: 10%;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  vertical-align: top;</span><br><span class="line">  word-break: break-all;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  padding-bottom:2000px;</span><br><span class="line">  margin-bottom:-2000px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果图如下：</p>
+<p><img src="/2020/02/25/css%E7%AD%89%E9%AB%98%E7%9A%84%E6%96%B9%E5%BC%8F/css3.png" alt="css3"></p>
+<p>优点：兼容性最好<br>缺点：下边框会不显示，需改用父元素的border-bottom，垂直居中难实现</p>
+<hr>
+<p>参考：</p>
+<p><a href="https://www.cnblogs.com/chenhuichao/p/8682925.html" target="_blank" rel="noopener" title="关于垂直居中的方法总结！">关于垂直居中的方法总结！</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2020/03/02/%E5%B7%A5%E5%85%B7%E7%BD%91%E7%AB%99/" class="pre-post btn btn-default" title='工具网站'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            工具网站</span>
+    </a>
+    
+    
+    <a href="/2020/02/24/%E9%9D%99%E4%B8%8B%E6%9D%A5%E5%A5%BD%E5%A5%BD%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%BD%91%E7%AB%99/" class="next-post btn btn-default" title='静下来好好学习的网站'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            静下来好好学习的网站</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-使用css-Flex布局"><span class="toc-text">1. 使用css Flex布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-使用css-Table布局"><span class="toc-text">2. 使用css Table布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-使用CSS-网格Grid"><span class="toc-text">3. 使用CSS 网格Grid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-使用CSS-padding-bottom-margin-bottom正负值相抵-等高"><span class="toc-text">4. 使用CSS padding-bottom|margin-bottom正负值相抵 (等高)</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
