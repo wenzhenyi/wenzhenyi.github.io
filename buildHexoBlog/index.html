@@ -20,28 +20,41 @@
     var CONFIG = {"hostname":"wenzhenyi.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog For Wenzy">
-<meta property="og:url" content="https://wenzhenyi.github.io/page/2/index.html">
+  <meta name="description" content="什么是Hexo？Hexo是一个快速、简洁且高效的博客框架。基于node.js；支持MarkDown语法；可扩展性强；博客主题众多，。 开始搭建1. 安装Hexo所需环境：  node git   利用npm安装Hexo 1$ npm install -g hexo-cli hexo  2. 本地搭建Hexo 安装 Hexo 完成后，进入电脑的文件夹内打开控制台(shift + 右键 -&gt; 在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何用Hexo和Git搭建一个免费的线上博客">
+<meta property="og:url" content="https://wenzhenyi.github.io/buildHexoBlog/index.html">
 <meta property="og:site_name" content="Blog For Wenzy">
+<meta property="og:description" content="什么是Hexo？Hexo是一个快速、简洁且高效的博客框架。基于node.js；支持MarkDown语法；可扩展性强；博客主题众多，。 开始搭建1. 安装Hexo所需环境：  node git   利用npm安装Hexo 1$ npm install -g hexo-cli hexo  2. 本地搭建Hexo 安装 Hexo 完成后，进入电脑的文件夹内打开控制台(shift + 右键 -&gt; 在">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wenzhenyi.github.io/buildHexoBlog/theme1.png">
+<meta property="og:image" content="https://wenzhenyi.github.io/buildHexoBlog/theme2.png">
+<meta property="og:image" content="https://wenzhenyi.github.io/buildHexoBlog/gulp.png">
+<meta property="og:image" content="https://wenzhenyi.github.io/buildHexoBlog/gulp2.png">
+<meta property="og:image" content="https://wenzhenyi.github.io/buildHexoBlog/git2.png">
+<meta property="og:image" content="https://wenzhenyi.github.io/buildHexoBlog/set1.png">
+<meta property="og:image" content="https://wenzhenyi.github.io/buildHexoBlog/git1.png">
+<meta property="article:published_time" content="2020-02-19T06:45:07.000Z">
+<meta property="article:modified_time" content="2021-07-07T02:49:46.475Z">
 <meta property="article:author" content="Wenzy">
+<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wenzhenyi.github.io/buildHexoBlog/theme1.png">
 
-<link rel="canonical" href="https://wenzhenyi.github.io/page/2/">
+<link rel="canonical" href="https://wenzhenyi.github.io/buildHexoBlog/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Blog For Wenzy</title>
+  <title>如何用Hexo和Git搭建一个免费的线上博客 | Blog For Wenzy</title>
   
 
 
@@ -168,9 +181,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -186,10 +200,9 @@
       <meta itemprop="name" content="Blog For Wenzy">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/buildHexoBlog/" class="post-title-link" itemprop="url">如何用Hexo和Git搭建一个免费的线上博客</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          如何用Hexo和Git搭建一个免费的线上博客
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -219,7 +232,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="什么是Hexo？"><a href="#什么是Hexo？" class="headerlink" title="什么是Hexo？"></a>什么是Hexo？</h1><p>Hexo是一个快速、简洁且高效的博客框架。基于node.js；支持MarkDown语法；可扩展性强；博客主题众多，。</p>
+        <h1 id="什么是Hexo？"><a href="#什么是Hexo？" class="headerlink" title="什么是Hexo？"></a>什么是Hexo？</h1><p>Hexo是一个快速、简洁且高效的博客框架。基于node.js；支持MarkDown语法；可扩展性强；博客主题众多，。</p>
 <h1 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h1><h2 id="1-安装Hexo"><a href="#1-安装Hexo" class="headerlink" title="1. 安装Hexo"></a>1. 安装Hexo</h2><p>所需环境：</p>
 <ul>
 <li>node</li>
@@ -307,102 +320,37 @@
 <li>升级node版本(原本是8.4的)</li>
 </ol>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wenzhenyi.github.io/hello-world/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Wenzy">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog For Wenzy">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-17 22:44:52" itemprop="dateCreated datePublished" datetime="2020-02-17T22:44:52+08:00">2020-02-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-07 10:49:46" itemprop="dateModified" datetime="2021-07-07T10:49:46+08:00">2021-07-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E9%9D%99%E4%B8%8B%E6%9D%A5%E5%A5%BD%E5%A5%BD%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%BD%91%E7%AB%99/" rel="next" title="静下来好好学习的网站">
+      静下来好好学习的网站 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
-
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
 
 
 
@@ -454,6 +402,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是Hexo？"><span class="nav-number">1.</span> <span class="nav-text">什么是Hexo？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始搭建"><span class="nav-number">2.</span> <span class="nav-text">开始搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装Hexo"><span class="nav-number">2.1.</span> <span class="nav-text">1. 安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-本地搭建Hexo"><span class="nav-number">2.2.</span> <span class="nav-text">2. 本地搭建Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-下载主题（如果想用原装主题的可跳过）"><span class="nav-number">2.3.</span> <span class="nav-text">3. 下载主题（如果想用原装主题的可跳过）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-在外网上挂载项目"><span class="nav-number">2.4.</span> <span class="nav-text">4. 在外网上挂载项目</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#记录遇到的BUG"><span class="nav-number">3.</span> <span class="nav-text">记录遇到的BUG</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统上禁止运行脚本："><span class="nav-number">3.1.</span> <span class="nav-text">系统上禁止运行脚本：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SyntaxError-Invalid-regular-expression-flags"><span class="nav-number">3.2.</span> <span class="nav-text">SyntaxError: Invalid regular expression flags</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
