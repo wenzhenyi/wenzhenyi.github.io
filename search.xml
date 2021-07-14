@@ -31,6 +31,16 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Gulp学习</title>
+    <url>/2020/03/13/Gulp%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>构建工具:<br>  自动化。对于需要反复重复的任务，例如压缩（minification）、编译、单元测试、linting等，自动化工具可以减轻你的劳动，简化你的工作。<br>  gulp或者grunt都仅仅是一个操作平台，他们本身做不了任何事情，要做事情需要通过插件</p>
+<p>1.gulp的使用<br>  全局安装：<br>      npm install –global gulp<br>  创建项目：<br>      LearnGulp<br>  项目依赖安装：<br>      npm install –save-dev gulp<br>  在项目根目录下创建一个名为 gulpfile.js 的文件：<br>      var gulp = require(‘gulp’);<br>      gulp.task(‘default’, function() {<br>      // 将你的默认的任务代码放在这<br>      });<br>  运行<br>      gulp<br>2.gulp的方法<br>  gulp.task(str,fn)<br>    创建一个gulp任务<br>  gulp.src(path)<br>    文件来源<br>  gulp.dest(path)<br>    操作之后的文件到哪里去<br>  .pipe(package)<br>    执行一个gulp功能<br>  gulp.watch()<br>    监听<br>  gulp.start()<br>    执行gulp任务<br>3.插件<br>  1.压缩JavaScript文件<br>    1.安装插件<br>      npm install –save-dev gulp-uglify<br>      代码<br>      gulp.task(“jsuglify”,function(){<br>        gulp.src(“src/js/demo.js”)<br>            .pipe(jsUglify())<br>            .pipe(gulp.dest(“dist/js”))<br>      })<br>  2.压缩CSS文件<br>    1.安装<br>      npm install –save-dev gulp-minify-css<br>  3.压缩HTML文件<br>    1.安装<br>      npm install –save-dev gulp-minify-html<br>  4.图片压缩<br>    npm install –save-dev gulp-imagemin<br>  5.代码检查<br>    npm install –save-dev gulp-jshint jshint<br>    公司learder自己编写代码规范，按照他的规范来写代码！！！<br>  6.合并、重命名<br>    npm install –save-dev gulp-concat gulp-rename<br>  7.Less编译为CSS文件<br>    npm install –save-dev gulp-less<br>  8.监听<br>    gulp.task(“watchLess”,function(){<br>      gulp.watch(“src/css/*.less”,function(){<br>        gulp.run(“reless”)<br>      })<br>    })<br>  9.热更新：<br>    1.命令：npm install gulp-livereload –save-dev<br>    2.全局服务器：npm install -g http-server<br>    3.浏览器打开：chrome://extensions/ 浏览器插件：LiveReload （直接点击启动）<br>    4.编写热更新的代码<br>    5.启动热更新<br>      1.在项目根目录下启动http-server<br>      2.启动热更新：hot<br>      3.打开浏览器启动项目<br>      4.启动浏览器（livereload）插件，将空心圆点成实心圆</p>
+]]></content>
+      <tags>
+        <tag>Gulp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JS设计模式 - 面向对象</title>
     <url>/2020/03/17/JS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<h2 id="类和对象的概念"><a href="#类和对象的概念" class="headerlink" title="类和对象的概念"></a>类和对象的概念</h2><blockquote>
@@ -109,14 +119,11 @@
       </tags>
   </entry>
   <entry>
-    <title>Gulp学习</title>
-    <url>/2020/03/13/Gulp%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>构建工具:<br>  自动化。对于需要反复重复的任务，例如压缩（minification）、编译、单元测试、linting等，自动化工具可以减轻你的劳动，简化你的工作。<br>  gulp或者grunt都仅仅是一个操作平台，他们本身做不了任何事情，要做事情需要通过插件</p>
-<p>1.gulp的使用<br>  全局安装：<br>      npm install –global gulp<br>  创建项目：<br>      LearnGulp<br>  项目依赖安装：<br>      npm install –save-dev gulp<br>  在项目根目录下创建一个名为 gulpfile.js 的文件：<br>      var gulp = require(‘gulp’);<br>      gulp.task(‘default’, function() {<br>      // 将你的默认的任务代码放在这<br>      });<br>  运行<br>      gulp<br>2.gulp的方法<br>  gulp.task(str,fn)<br>    创建一个gulp任务<br>  gulp.src(path)<br>    文件来源<br>  gulp.dest(path)<br>    操作之后的文件到哪里去<br>  .pipe(package)<br>    执行一个gulp功能<br>  gulp.watch()<br>    监听<br>  gulp.start()<br>    执行gulp任务<br>3.插件<br>  1.压缩JavaScript文件<br>    1.安装插件<br>      npm install –save-dev gulp-uglify<br>      代码<br>      gulp.task(“jsuglify”,function(){<br>        gulp.src(“src/js/demo.js”)<br>            .pipe(jsUglify())<br>            .pipe(gulp.dest(“dist/js”))<br>      })<br>  2.压缩CSS文件<br>    1.安装<br>      npm install –save-dev gulp-minify-css<br>  3.压缩HTML文件<br>    1.安装<br>      npm install –save-dev gulp-minify-html<br>  4.图片压缩<br>    npm install –save-dev gulp-imagemin<br>  5.代码检查<br>    npm install –save-dev gulp-jshint jshint<br>    公司learder自己编写代码规范，按照他的规范来写代码！！！<br>  6.合并、重命名<br>    npm install –save-dev gulp-concat gulp-rename<br>  7.Less编译为CSS文件<br>    npm install –save-dev gulp-less<br>  8.监听<br>    gulp.task(“watchLess”,function(){<br>      gulp.watch(“src/css/*.less”,function(){<br>        gulp.run(“reless”)<br>      })<br>    })<br>  9.热更新：<br>    1.命令：npm install gulp-livereload –save-dev<br>    2.全局服务器：npm install -g http-server<br>    3.浏览器打开：chrome://extensions/ 浏览器插件：LiveReload （直接点击启动）<br>    4.编写热更新的代码<br>    5.启动热更新<br>      1.在项目根目录下启动http-server<br>      2.启动热更新：hot<br>      3.打开浏览器启动项目<br>      4.启动浏览器（livereload）插件，将空心圆点成实心圆</p>
+    <title>React Hooks系列 useEffect</title>
+    <url>/2021/07/14/ReactHooks%E7%B3%BB%E5%88%97-useEffect/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用React Hooks时，useEffect的作用非常大，该系列归纳下工作中遇到的关于useEffect的应用场景和查找资料中深入了解的一些问题。</p>
+<h2 id><a href="#" class="headerlink" title></a></h2><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><p><a href="https://juejin.cn/post/6844903806090608647#heading-16" target="_blank" rel="noopener">精读《useEffect 完全指南》</a></p>
 ]]></content>
-      <tags>
-        <tag>Gulp</tag>
-      </tags>
   </entry>
   <entry>
     <title>css特殊性</title>
@@ -142,6 +149,7 @@
 ]]></content>
       <tags>
         <tag>css</tag>
+        <tag>前端面试</tag>
       </tags>
   </entry>
   <entry>
@@ -188,6 +196,52 @@
 ]]></content>
       <tags>
         <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/02/17/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>vsCode中常用的插件</title>
+    <url>/2020/03/26/vsCode%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6/</url>
+    <content><![CDATA[<h2 id="1-AutoFileName"><a href="#1-AutoFileName" class="headerlink" title="1. AutoFileName"></a>1. AutoFileName</h2><p>自动补充文件名</p>
+<h2 id="2-Chinese"><a href="#2-Chinese" class="headerlink" title="2. Chinese"></a>2. Chinese</h2><p>适用于 VS Code 的中文（简体）语言包</p>
+<h2 id="3-Code-Runner"><a href="#3-Code-Runner" class="headerlink" title="3. Code Runner"></a>3. Code Runner</h2><p>用于跑小小一段的代码</p>
+<h2 id="4-Git-History-Diff"><a href="#4-Git-History-Diff" class="headerlink" title="4. Git History Diff"></a>4. Git History Diff</h2><p>查看git的历史记录以及比较</p>
+<h2 id="5-JavaScript-ES6-code-snippets"><a href="#5-JavaScript-ES6-code-snippets" class="headerlink" title="5. JavaScript(ES6) code snippets"></a>5. JavaScript(ES6) code snippets</h2><p>自动补充es6语法</p>
+<h2 id="6-Live-Server"><a href="#6-Live-Server" class="headerlink" title="6. Live Server"></a>6. Live Server</h2><p>在当前文件夹创建小型服务器</p>
+<h2 id="7-Open-in-Browser"><a href="#7-Open-in-Browser" class="headerlink" title="7. Open in Browser"></a>7. Open in Browser</h2><p>右键从浏览器打开此文件</p>
+<h2 id="8-Prettier-Code-formatter"><a href="#8-Prettier-Code-formatter" class="headerlink" title="8. Prettier - Code formatter"></a>8. Prettier - Code formatter</h2><p>格式化代码</p>
+<h2 id="9-Vetur"><a href="#9-Vetur" class="headerlink" title="9. Vetur"></a>9. Vetur</h2><p>vue集成的工具</p>
+<h2 id="10-VS-Color-Picker"><a href="#10-VS-Color-Picker" class="headerlink" title="10. VS Color Picker"></a>10. VS Color Picker</h2><p>颜色选择器</p>
+]]></content>
+      <tags>
+        <tag>vscode</tag>
+        <tag>2020年3月</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>手写一个Promise</title>
+    <url>/2021/07/08/%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AAPromise/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>promise的使用场景很多，手写一个promise也是对自己js知识的一个巩固</p>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
       </tags>
   </entry>
   <entry>
@@ -286,21 +340,10 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/02/17/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>静下来好好学习的网站</title>
+    <url>/2020/02/24/%E9%9D%99%E4%B8%8B%E6%9D%A5%E5%A5%BD%E5%A5%BD%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<h2 id="scrimba"><a href="#scrimba" class="headerlink" title="scrimba"></a>scrimba</h2><p>全英文学习</p>
+<p><a href="https://scrimba.com/" target="_blank" rel="noopener" title="scrimba">scrimba</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -315,40 +358,5 @@
 <h2 id="前端好用的开发工具"><a href="#前端好用的开发工具" class="headerlink" title="前端好用的开发工具"></a>前端好用的开发工具</h2><p>FeHelper: chrome插件，包含JSON接口自动格式化，代码美化，代码压缩，二维码生成器，页面取色工具等工具</p>
 <p><a href="https://github.com/zxlie/FeHelper/tree/master/apps/static/screenshot/crx" target="_blank" rel="noopener" title="FeHelper">FeHelper</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>vsCode中常用的插件</title>
-    <url>/2020/03/26/vsCode%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6/</url>
-    <content><![CDATA[<h2 id="1-AutoFileName"><a href="#1-AutoFileName" class="headerlink" title="1. AutoFileName"></a>1. AutoFileName</h2><p>自动补充文件名</p>
-<h2 id="2-Chinese"><a href="#2-Chinese" class="headerlink" title="2. Chinese"></a>2. Chinese</h2><p>适用于 VS Code 的中文（简体）语言包</p>
-<h2 id="3-Code-Runner"><a href="#3-Code-Runner" class="headerlink" title="3. Code Runner"></a>3. Code Runner</h2><p>用于跑小小一段的代码</p>
-<h2 id="4-Git-History-Diff"><a href="#4-Git-History-Diff" class="headerlink" title="4. Git History Diff"></a>4. Git History Diff</h2><p>查看git的历史记录以及比较</p>
-<h2 id="5-JavaScript-ES6-code-snippets"><a href="#5-JavaScript-ES6-code-snippets" class="headerlink" title="5. JavaScript(ES6) code snippets"></a>5. JavaScript(ES6) code snippets</h2><p>自动补充es6语法</p>
-<h2 id="6-Live-Server"><a href="#6-Live-Server" class="headerlink" title="6. Live Server"></a>6. Live Server</h2><p>在当前文件夹创建小型服务器</p>
-<h2 id="7-Open-in-Browser"><a href="#7-Open-in-Browser" class="headerlink" title="7. Open in Browser"></a>7. Open in Browser</h2><p>右键从浏览器打开此文件</p>
-<h2 id="8-Prettier-Code-formatter"><a href="#8-Prettier-Code-formatter" class="headerlink" title="8. Prettier - Code formatter"></a>8. Prettier - Code formatter</h2><p>格式化代码</p>
-<h2 id="9-Vetur"><a href="#9-Vetur" class="headerlink" title="9. Vetur"></a>9. Vetur</h2><p>vue集成的工具</p>
-<h2 id="10-VS-Color-Picker"><a href="#10-VS-Color-Picker" class="headerlink" title="10. VS Color Picker"></a>10. VS Color Picker</h2><p>颜色选择器</p>
-]]></content>
-      <tags>
-        <tag>vscode</tag>
-        <tag>2020年3月</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>静下来好好学习的网站</title>
-    <url>/2020/02/24/%E9%9D%99%E4%B8%8B%E6%9D%A5%E5%A5%BD%E5%A5%BD%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<h2 id="scrimba"><a href="#scrimba" class="headerlink" title="scrimba"></a>scrimba</h2><p>全英文学习</p>
-<p><a href="https://scrimba.com/" target="_blank" rel="noopener" title="scrimba">scrimba</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>手写一个Promise</title>
-    <url>/2021/07/08/%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AAPromise/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>promise的使用场景很多，手写一个promise也是对自己js知识的一个巩固</p>
-]]></content>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
   </entry>
 </search>
