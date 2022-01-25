@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wenzhenyi.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="微信小程序扫码接口，wx.scanCode(OBJECT)https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_34122548&#x2F;article&#x2F;details&#x2F;92504534 nodejs读取图片并将二进制数据转换成base64格式const buffer &#x3D; new Buffer(data, &#39;binary&#39;).toString(&#39;base64&#39;); MY">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021-11月记录">
+<meta property="og:url" content="https://wenzhenyi.github.io/21-11%E6%9C%88%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="Blog For Wenzy">
+<meta property="og:description" content="微信小程序扫码接口，wx.scanCode(OBJECT)https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_34122548&#x2F;article&#x2F;details&#x2F;92504534 nodejs读取图片并将二进制数据转换成base64格式const buffer &#x3D; new Buffer(data, &#39;binary&#39;).toString(&#39;base64&#39;); MY">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-08T09:13:32.000Z">
+<meta property="article:modified_time" content="2022-01-25T08:22:58.183Z">
+<meta property="article:author" content="Wenzy">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://wenzhenyi.github.io/21-11%E6%9C%88%E8%AE%B0%E5%BD%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>2021-11月记录 | Blog For Wenzy</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Blog For Wenzy" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Blog For Wenzy</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wenzhenyi.github.io/21-11%E6%9C%88%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Wenzy">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog For Wenzy">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2021-11月记录
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-08 17:13:32" itemprop="dateCreated datePublished" datetime="2021-11-08T17:13:32+08:00">2021-11-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-25 16:22:58" itemprop="dateModified" datetime="2022-01-25T16:22:58+08:00">2022-01-25</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="微信小程序扫码接口，wx-scanCode-OBJECT"><a href="#微信小程序扫码接口，wx-scanCode-OBJECT" class="headerlink" title="微信小程序扫码接口，wx.scanCode(OBJECT)"></a>微信小程序扫码接口，wx.scanCode(OBJECT)</h2><p><a href="https://blog.csdn.net/weixin_34122548/article/details/92504534" target="_blank" rel="noopener">https://blog.csdn.net/weixin_34122548/article/details/92504534</a></p>
+<h2 id="nodejs读取图片并将二进制数据转换成base64格式"><a href="#nodejs读取图片并将二进制数据转换成base64格式" class="headerlink" title="nodejs读取图片并将二进制数据转换成base64格式"></a>nodejs读取图片并将二进制数据转换成base64格式</h2><p><code>const buffer = new Buffer(data, &#39;binary&#39;).toString(&#39;base64&#39;);</code></p>
+<h2 id="MYSQL两个group-by的select语句怎么组合一起"><a href="#MYSQL两个group-by的select语句怎么组合一起" class="headerlink" title="MYSQL两个group by的select语句怎么组合一起"></a>MYSQL两个group by的select语句怎么组合一起</h2><p><a href="https://www.nuomiphp.com/eplan/620604.html" target="_blank" rel="noopener">https://www.nuomiphp.com/eplan/620604.html</a></p>
+<h2 id="ROW-NUMBER"><a href="#ROW-NUMBER" class="headerlink" title="ROW_NUMBER()"></a>ROW_NUMBER()</h2><h2 id="qr-image的使用"><a href="#qr-image的使用" class="headerlink" title="qr-image的使用"></a>qr-image的使用</h2><p><a href="https://www.npmjs.com/package/node-qr-image" target="_blank" rel="noopener">https://www.npmjs.com/package/node-qr-image</a></p>
+<h2 id="js中实现根据某个字段进行排序"><a href="#js中实现根据某个字段进行排序" class="headerlink" title="js中实现根据某个字段进行排序"></a>js中实现根据某个字段进行排序</h2><p>sort方法</p>
+<h2 id="小程序订阅消息？-“errcode”-44002-”errmsg”-”empty-post-data"><a href="#小程序订阅消息？-“errcode”-44002-”errmsg”-”empty-post-data" class="headerlink" title="小程序订阅消息？{“errcode”:44002,”errmsg”:”empty post data}"></a>小程序订阅消息？{“errcode”:44002,”errmsg”:”empty post data}</h2><h2 id="微信小程序码获取-从频繁失败到成功率100"><a href="#微信小程序码获取-从频繁失败到成功率100" class="headerlink" title="微信小程序码获取-从频繁失败到成功率100%"></a>微信小程序码获取-从频繁失败到成功率100%</h2><p><a href="https://developers.weixin.qq.com/community/develop/article/doc/0000cc805683281d77a86435656013" target="_blank" rel="noopener">https://developers.weixin.qq.com/community/develop/article/doc/0000cc805683281d77a86435656013</a></p>
+<a id="more"></a>
+
+<h2 id="java-vue-element-小程序码后端生成和前端展示"><a href="#java-vue-element-小程序码后端生成和前端展示" class="headerlink" title="java+vue element 小程序码后端生成和前端展示"></a>java+vue element 小程序码后端生成和前端展示</h2><p><a href="https://blog.csdn.net/qq_38977441/article/details/106396113" target="_blank" rel="noopener">https://blog.csdn.net/qq_38977441/article/details/106396113</a></p>
+<h2 id="微信获取小程序码createQRCode-get-getUnlimited区别"><a href="#微信获取小程序码createQRCode-get-getUnlimited区别" class="headerlink" title="微信获取小程序码createQRCode,get,getUnlimited区别"></a>微信获取小程序码createQRCode,get,getUnlimited区别</h2><h2 id="详解微信小程序带参数二维码的生成以及参数的获取"><a href="#详解微信小程序带参数二维码的生成以及参数的获取" class="headerlink" title="详解微信小程序带参数二维码的生成以及参数的获取"></a>详解微信小程序带参数二维码的生成以及参数的获取</h2><p><a href="http://doofuu.com/article/4156146.html" target="_blank" rel="noopener">http://doofuu.com/article/4156146.html</a></p>
+<h2 id="midway中间件的使用"><a href="#midway中间件的使用" class="headerlink" title="midway中间件的使用"></a>midway中间件的使用</h2><p><a href="http://www.midwayjs.org/docs/web_middleware" target="_blank" rel="noopener">http://www.midwayjs.org/docs/web_middleware</a></p>
+<h2 id="微信小程序获取jscode2sessiot提示ninvalid-code"><a href="#微信小程序获取jscode2sessiot提示ninvalid-code" class="headerlink" title="微信小程序获取jscode2sessiot提示ninvalid code"></a>微信小程序获取jscode2sessiot提示ninvalid code</h2><p>微信小程序出现“invalid code”的解决方法：我们只需要在开发者工具的详情界面中修改Appid即可。小程序分发的code是与appid绑定的，仅当前申请code的appid才可使用。</p>
+<h2 id="小程序已认证getPhoneNumber-fail-no-permission"><a href="#小程序已认证getPhoneNumber-fail-no-permission" class="headerlink" title="小程序已认证getPhoneNumber:fail no permission"></a>小程序已认证getPhoneNumber:fail no permission</h2><h2 id="uni-app怎么返回上一页"><a href="#uni-app怎么返回上一页" class="headerlink" title="uni-app怎么返回上一页"></a>uni-app怎么返回上一页</h2><p><a href="https://zhuanlan.zhihu.com/p/346593866" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/346593866</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">back() &#123;</span><br><span class="line">  &#x2F;*uni.navigateBack(&#123;</span><br><span class="line">    delta: 1</span><br><span class="line">  &#125;)*&#x2F;</span><br><span class="line">  &#x2F;&#x2F;@zxyuns 处理兼容，如果没有上一级界面则返回首页</span><br><span class="line">  const pages &#x3D; getCurrentPages();</span><br><span class="line">  if (pages.length &#x3D;&#x3D;&#x3D; 2) &#123;</span><br><span class="line">    uni.navigateBack(&#123;</span><br><span class="line">      delta: 1</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125; else if (pages.length &#x3D;&#x3D;&#x3D; 1) &#123;</span><br><span class="line">    uni.switchTab(&#123;</span><br><span class="line">      url: &#39;&#x2F;pages&#x2F;home&#x2F;home&#39;,</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    uni.navigateBack(&#123;</span><br><span class="line">      delta: 1</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h2 id="uni-app-页面-amp-组件生命周期"><a href="#uni-app-页面-amp-组件生命周期" class="headerlink" title="uni-app 页面&amp;组件生命周期"></a>uni-app 页面&amp;组件生命周期</h2><p><a href="https://www.jianshu.com/p/880c600a8be7" target="_blank" rel="noopener">https://www.jianshu.com/p/880c600a8be7</a></p>
+<h2 id="nodejs利用string-random生成指定的随机字符串"><a href="#nodejs利用string-random生成指定的随机字符串" class="headerlink" title="nodejs利用string-random生成指定的随机字符串"></a>nodejs利用string-random生成指定的随机字符串</h2><p><a href="https://www.cnblogs.com/songqingbo/articles/10951569.html" target="_blank" rel="noopener">https://www.cnblogs.com/songqingbo/articles/10951569.html</a></p>
+<h2 id="在同一个sql语句中，统计不同条件的Count数量"><a href="#在同一个sql语句中，统计不同条件的Count数量" class="headerlink" title="在同一个sql语句中，统计不同条件的Count数量"></a>在同一个sql语句中，统计不同条件的Count数量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">方案一</span><br><span class="line"></span><br><span class="line">select id,</span><br><span class="line">count(case when 属性 in (1,2) then 1 else 0 end) as sum1,</span><br><span class="line">count(case when  属性 in (3) then 1 else 0 end) as sum2,</span><br><span class="line">sum(case when  属性 in (4,5) then 1 else 0 end) as sum3</span><br><span class="line">from 表名</span><br><span class="line">group by id</span><br><span class="line"> </span><br><span class="line">方案二</span><br><span class="line"> </span><br><span class="line"> SELECT   </span><br><span class="line">count( * ) AS num,  </span><br><span class="line">count(if(字段&#x3D;1,true,null)) AS sum1,   </span><br><span class="line"></span><br><span class="line">count(if字段&#x3D;2,true,null)) AS sum2   </span><br><span class="line"></span><br><span class="line">FROM 表名 </span><br><span class="line"></span><br><span class="line">WHERE  其他条件</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.cnblogs.com/chenliangcl/p/7283574.html" target="_blank" rel="noopener">https://www.cnblogs.com/chenliangcl/p/7283574.html</a></p>
+<h2 id="微信小程序主要的点"><a href="#微信小程序主要的点" class="headerlink" title="微信小程序主要的点"></a>微信小程序主要的点</h2><p>微信登录：</p>
+<p>一、 先熟悉好流程</p>
+<p>使用wx.login()获取用户的openid和session_key</p>
+<p>二、使用<code>getUserInfoProfiler</code></p>
+<p>微信支付：</p>
+<h2 id="MySQL数据库表结构设计：小程序商城-用户表"><a href="#MySQL数据库表结构设计：小程序商城-用户表" class="headerlink" title="MySQL数据库表结构设计：小程序商城-用户表"></a>MySQL数据库表结构设计：小程序商城-用户表</h2><p><a href="http://open.yesapi.cn/tablelist/yesapi_eb_user.html" target="_blank" rel="noopener">http://open.yesapi.cn/tablelist/yesapi_eb_user.html</a></p>
+<h2 id="Mysql用户·角色·权限·表的设计"><a href="#Mysql用户·角色·权限·表的设计" class="headerlink" title="Mysql用户·角色·权限·表的设计"></a>Mysql用户·角色·权限·表的设计</h2><ol>
+<li>通过字符串的形式</li>
+</ol>
+<p><a href="https://www.cnblogs.com/myseries/p/10871633.html" target="_blank" rel="noopener">RBAC</a></p>
+<h2 id="关键字group-by-、-Having的-用法"><a href="#关键字group-by-、-Having的-用法" class="headerlink" title="关键字group by 、 Having的 用法"></a>关键字group by 、 Having的 用法</h2><p>GROUP BY我们可以先从字面上来理解，GROUP表示分组，BY后面写字段名，就表示根据哪个字段进行分组，如果有用Excel比较多的话，GROUP BY比较类似Excel里面的透视表。<br>GROUP BY必须得配合聚合函数来用，分组之后你可以计数（COUNT），求和（SUM），求平均数（AVG）等。</p>
+<p>HAVING<br>当然提到GROUP BY 我们就不得不提到HAVING，HAVING相当于条件筛选，但它与WHERE筛选不同，HAVING是对于GROUP BY对象进行筛选。</p>
+<h2 id="sql去重；同一条数据出现多条取一条的sql语句"><a href="#sql去重；同一条数据出现多条取一条的sql语句" class="headerlink" title="sql去重；同一条数据出现多条取一条的sql语句"></a>sql去重；同一条数据出现多条取一条的sql语句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-- count函数</span><br><span class="line">select count(姓名)</span><br><span class="line">from student;</span><br><span class="line"> </span><br><span class="line">select count(distinct 姓名) &#x2F;*去除重复姓名*&#x2F;</span><br><span class="line">from student;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://blog.csdn.net/weixin_39840733/article/details/111099703" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39840733/article/details/111099703</a></p>
+<p><a href="https://www.cnblogs.com/mark5/p/11115750.html" target="_blank" rel="noopener">https://www.cnblogs.com/mark5/p/11115750.html</a></p>
+<h2 id="JavaScript中将字符串true或false转换成Boolean类型"><a href="#JavaScript中将字符串true或false转换成Boolean类型" class="headerlink" title="JavaScript中将字符串true或false转换成Boolean类型"></a>JavaScript中将字符串true或false转换成Boolean类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var isTrueSet &#x3D; ((myValue || &#39;&#39;).toLowerCase() &#x3D;&#x3D;&#x3D; &#39;true&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>直接对比字符串</p>
+<h2 id="uni-app-生命周期函数"><a href="#uni-app-生命周期函数" class="headerlink" title="uni-app 生命周期函数"></a>uni-app 生命周期函数</h2><p>onLaunch    当uni-app 初始化完成时触发（全局只触发一次）<br>onShow    当 uni-app 启动，或从后台进入前台显示<br>onHide    当 uni-app 从前台进入后台<br>onUniNViewMessage    对 nvue 页面发送的数据进行监听，可参考 nvue 向 vue 通讯</p>
+<h2 id="百度AI人脸识别、活体检测的坑"><a href="#百度AI人脸识别、活体检测的坑" class="headerlink" title="百度AI人脸识别、活体检测的坑"></a>百度AI人脸识别、活体检测的坑</h2><p>错误代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">222203  image check fail    无法解析人脸  检查图片质量</span><br></pre></td></tr></table></figure>
+
+<p><code>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAgAElEQVR4Xo........</code></p>
+<p>必须得把base64编码过的，把含有编码信息的头信息去掉</p>
+<h2 id="EGG-怎么接入微信支付"><a href="#EGG-怎么接入微信支付" class="headerlink" title="EGG 怎么接入微信支付"></a>EGG 怎么接入微信支付</h2><p><a href="https://juejin.cn/post/6932389366618652679#heading-1" target="_blank" rel="noopener">微信V2和V3接口确定</a></p>
+<p><a href="https://www.dazhuanlan.com/rem1x/topics/1173098" target="_blank" rel="noopener">https://www.dazhuanlan.com/rem1x/topics/1173098</a></p>
+<p><a href="https://www.codenong.com/cs106531483/" target="_blank" rel="noopener">https://www.codenong.com/cs106531483/</a></p>
+<p><a href="https://www.codeleading.com/article/44593117527/" target="_blank" rel="noopener">https://www.codeleading.com/article/44593117527/</a></p>
+<p><a href="https://www.dazhuanlan.com/rem1x/topics/1173098" target="_blank" rel="noopener">https://www.dazhuanlan.com/rem1x/topics/1173098</a></p>
+<p><a href="https://www.it610.com/article/1297241569925079040.htm" target="_blank" rel="noopener">NodeJS服务端实现微信小程序支付</a></p>
+<p>提示签名失败：</p>
+<p>检测参数！！！</p>
+<p>按照文档的方式加密 </p>
+<p>统一下单：<a href="https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_1" target="_blank" rel="noopener">https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_1</a></p>
+<p>微信支付报签名错误sign error，如何排查？<br><a href="https://developers.weixin.qq.com/community/develop/doc/0000a4be9a8d5081d94b4e4c051c09" target="_blank" rel="noopener">https://developers.weixin.qq.com/community/develop/doc/0000a4be9a8d5081d94b4e4c051c09</a></p>
+<h3 id="怎么接收微信的回调接口"><a href="#怎么接收微信的回调接口" class="headerlink" title="怎么接收微信的回调接口"></a>怎么接收微信的回调接口</h3><p>问题：egg的post中的body里没有数据<br>原因：微信返回的是xml的数据，但是egg里默认接受的是json的数据<br>egg 如何接收xml数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 覆盖egg自带的配置 使支持接收xml参数</span><br><span class="line">config.bodyParser &#x3D; &#123;</span><br><span class="line">  enable: true,</span><br><span class="line">  encoding: &#39;utf8&#39;,</span><br><span class="line">  formLimit: &#39;100kb&#39;,</span><br><span class="line">  jsonLimit: &#39;100kb&#39;,</span><br><span class="line">  strict: true,</span><br><span class="line">  &#x2F;&#x2F; @see https:&#x2F;&#x2F;github.com&#x2F;hapijs&#x2F;qs&#x2F;blob&#x2F;master&#x2F;lib&#x2F;parse.js#L8 for more options</span><br><span class="line">  queryString: &#123;</span><br><span class="line">    arrayLimit: 100,</span><br><span class="line">    depth: 5,</span><br><span class="line">    parameterLimit: 1000,</span><br><span class="line">  &#125;,</span><br><span class="line">  enableTypes: [&#39;json&#39;, &#39;form&#39;, &#39;text&#39;],</span><br><span class="line">  extendTypes: &#123;</span><br><span class="line">    text: [&#39;text&#x2F;xml&#39;, &#39;application&#x2F;xml&#39;],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="微信小程序获取绑定授权用户手机号getPhoneNumber"><a href="#微信小程序获取绑定授权用户手机号getPhoneNumber" class="headerlink" title="微信小程序获取绑定授权用户手机号getPhoneNumber"></a>微信小程序获取绑定授权用户手机号getPhoneNumber</h2><p><a href="https://blog.csdn.net/weixin_41818665/article/details/79509792" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41818665/article/details/79509792</a></p>
+<p><a href="https://www.jb51.net/article/179007.htm" target="_blank" rel="noopener">微信小程序如何通过用户授权获取手机号(getPhoneNumber)</a></p>
+<h2 id="小程序怎么在代码层面清除缓存"><a href="#小程序怎么在代码层面清除缓存" class="headerlink" title="小程序怎么在代码层面清除缓存"></a>小程序怎么在代码层面清除缓存</h2><p>分数据缓存和  登录状态缓存等</p>
+<p>小程序只能清楚数据的缓存</p>
+<h2 id="uniapp中uni-previewImage参数为base64类型图片预览在真机上不显示问题"><a href="#uniapp中uni-previewImage参数为base64类型图片预览在真机上不显示问题" class="headerlink" title="uniapp中uni.previewImage参数为base64类型图片预览在真机上不显示问题"></a>uniapp中uni.previewImage参数为base64类型图片预览在真机上不显示问题</h2><p>在字节小程序中有问题 是因为字节不支持base64的形式，微信小程序支持，改为image的方式展示</p>
+<h2 id="Egg-js-实现向服务器上传图片"><a href="#Egg-js-实现向服务器上传图片" class="headerlink" title="Egg.js 实现向服务器上传图片"></a>Egg.js 实现向服务器上传图片</h2><p>可保存图片到本地环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">async saveImg (ctx) &#123;</span><br><span class="line">  const stream &#x3D; await this.userService.getFileStream();</span><br><span class="line">  &#x2F;&#x2F; 保存文件至本地</span><br><span class="line">  const currentTime &#x3D; moment();</span><br><span class="line">  const fileArray &#x3D; stream.filename.split(&#39;.&#39;);</span><br><span class="line">  const fileName &#x3D; &#96;$&#123;fileArray[0]&#125;-$&#123;currentTime.format(&#39;YYYYMMDDHHmmss&#39;)&#125;.$&#123;fileArray[1]&#125;&#96;;</span><br><span class="line">  const savePath &#x3D; ctx.app.config.fileUpload.savePath;</span><br><span class="line">  const writeFilePath &#x3D; path.join(__dirname, savePath + &#96;&#x2F;$&#123;fileName&#125;&#96;);</span><br><span class="line">  const writeBak &#x3D; path.join(__dirname, &#96;..&#x2F;..&#x2F;..&#x2F;uploadImg&#x2F;$&#123;fileName&#125;&#96;);</span><br><span class="line">  console.log(&quot;writeFilePath----&quot;, writeFilePath)</span><br><span class="line">  stream.pipe(await fs.createWriteStream(writeFilePath, &#123; encoding: &#39;utf-8&#39; &#125;))</span><br><span class="line">  stream.pipe(await fs.createWriteStream(writeBak, &#123; encoding: &#39;utf-8&#39; &#125;))</span><br><span class="line">  return ctx.body &#x3D; &#123;</span><br><span class="line">    code: 200,</span><br><span class="line">    message: &#39;图片上传成功&#39;,</span><br><span class="line">    fileName: fileName,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">async getFileStream(): Promise&lt;any&gt; &#123;</span><br><span class="line">  const &#123; ctx &#125; &#x3D; this;</span><br><span class="line">  const stream &#x3D; await ctx.getFileStream();</span><br><span class="line"></span><br><span class="line">  return stream;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.cnblogs.com/crazycode2/p/12481854.html" target="_blank" rel="noopener">https://www.cnblogs.com/crazycode2/p/12481854.html</a></p>
+<p><a href="https://blog.csdn.net/qq_33559093/article/details/95483498" target="_blank" rel="noopener">https://blog.csdn.net/qq_33559093/article/details/95483498</a></p>
+<h2 id="uni-app里用v-html渲染的图片怎么改大小"><a href="#uni-app里用v-html渲染的图片怎么改大小" class="headerlink" title="uni-app里用v-html渲染的图片怎么改大小"></a>uni-app里用v-html渲染的图片怎么改大小</h2><ol>
+<li>在全局样式中定义 加important</li>
+<li>直接通过正则匹配图片添加样式</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;&lt;&#x2F;style&gt;不要用scoped修饰。打开样式只能在当前组件内使用的限制</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped&gt;</span><br><span class="line">&gt;&gt;&gt; .imgWidth img &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="字节小程序自定义头部失效"><a href="#字节小程序自定义头部失效" class="headerlink" title="字节小程序自定义头部失效"></a>字节小程序自定义头部失效</h2><p>没有import Vue</p>
+<p>uniapp小程序自定义头部</p>
+<h2 id="字节小程序解密失败问题"><a href="#字节小程序解密失败问题" class="headerlink" title="字节小程序解密失败问题"></a>字节小程序解密失败问题</h2><p>在login和getUserInfo后首次登陆可以拿信息，但第二次登陆后解码失败</p>
+<p>是因为没有清空登陆缓存</p>
+<p>需要在字节开发者工具自行删除</p>
+<p>uni.app开发字节跳动小程序的授权登陆</p>
+<p>官方解码算法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Node.js</span><br><span class="line">const crypto &#x3D; require(&quot;crypto&quot;);</span><br><span class="line"></span><br><span class="line">function decrypt(encryptedData, sessionKey, iv) &#123;</span><br><span class="line">  const decipher &#x3D; crypto.createDecipheriv(</span><br><span class="line">    &quot;aes-128-cbc&quot;,</span><br><span class="line">    Buffer.from(sessionKey, &quot;base64&quot;),</span><br><span class="line">    Buffer.from(iv, &quot;base64&quot;)</span><br><span class="line">  );</span><br><span class="line">  let ret &#x3D; decipher.update(encryptedData, &quot;base64&quot;);</span><br><span class="line">  ret +&#x3D; decipher.final();</span><br><span class="line">  return ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="字节小程序担保支付接入文档-服务端"><a href="#字节小程序担保支付接入文档-服务端" class="headerlink" title="字节小程序担保支付接入文档-服务端"></a>字节小程序担保支付接入文档-服务端</h2><p>即接入微信或支付宝支付</p>
+<p>流程1：createOrder  （签名算法）</p>
+<p>流程2：前端使用tt.pay掉起收银台</p>
+<p>流程3：支付成功后加入回调</p>
+<p><a href="https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/server/ecpay/server-doc/" target="_blank" rel="noopener">https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/server/ecpay/server-doc/</a></p>
+<p>坑：不清楚SALT的值</p>
+<p><a href="https://182.92.158.184/articles/2021/05/23/1621749738396.html" target="_blank" rel="noopener">https://182.92.158.184/articles/2021/05/23/1621749738396.html</a></p>
+<h2 id="如何设计表格？—-产品设计类"><a href="#如何设计表格？—-产品设计类" class="headerlink" title="如何设计表格？— 产品设计类"></a>如何设计表格？— 产品设计类</h2><p>结构简单，精准高效，使用简单</p>
+<p><a href="http://lanlanwork.com/blog/m/?post=7054" target="_blank" rel="noopener">http://lanlanwork.com/blog/m/?post=7054</a></p>
+<h2 id="SQL-中字符串匹配的用法"><a href="#SQL-中字符串匹配的用法" class="headerlink" title="SQL 中字符串匹配的用法"></a>SQL 中字符串匹配的用法</h2><p>关键字：like</p>
+<p>%：匹配一个或多个字符；</p>
+<p>_：匹配任意单个字符；</p>
+<p>escape：定义转义字符。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/21-10%E6%9C%88%E8%AE%B0%E5%BD%95/" rel="prev" title="21-10月记录">
+      <i class="fa fa-chevron-left"></i> 21-10月记录
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#微信小程序扫码接口，wx-scanCode-OBJECT"><span class="nav-number">1.</span> <span class="nav-text">微信小程序扫码接口，wx.scanCode(OBJECT)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nodejs读取图片并将二进制数据转换成base64格式"><span class="nav-number">2.</span> <span class="nav-text">nodejs读取图片并将二进制数据转换成base64格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MYSQL两个group-by的select语句怎么组合一起"><span class="nav-number">3.</span> <span class="nav-text">MYSQL两个group by的select语句怎么组合一起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ROW-NUMBER"><span class="nav-number">4.</span> <span class="nav-text">ROW_NUMBER()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#qr-image的使用"><span class="nav-number">5.</span> <span class="nav-text">qr-image的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js中实现根据某个字段进行排序"><span class="nav-number">6.</span> <span class="nav-text">js中实现根据某个字段进行排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小程序订阅消息？-“errcode”-44002-”errmsg”-”empty-post-data"><span class="nav-number">7.</span> <span class="nav-text">小程序订阅消息？{“errcode”:44002,”errmsg”:”empty post data}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信小程序码获取-从频繁失败到成功率100"><span class="nav-number">8.</span> <span class="nav-text">微信小程序码获取-从频繁失败到成功率100%</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-vue-element-小程序码后端生成和前端展示"><span class="nav-number">9.</span> <span class="nav-text">java+vue element 小程序码后端生成和前端展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信获取小程序码createQRCode-get-getUnlimited区别"><span class="nav-number">10.</span> <span class="nav-text">微信获取小程序码createQRCode,get,getUnlimited区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详解微信小程序带参数二维码的生成以及参数的获取"><span class="nav-number">11.</span> <span class="nav-text">详解微信小程序带参数二维码的生成以及参数的获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#midway中间件的使用"><span class="nav-number">12.</span> <span class="nav-text">midway中间件的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信小程序获取jscode2sessiot提示ninvalid-code"><span class="nav-number">13.</span> <span class="nav-text">微信小程序获取jscode2sessiot提示ninvalid code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小程序已认证getPhoneNumber-fail-no-permission"><span class="nav-number">14.</span> <span class="nav-text">小程序已认证getPhoneNumber:fail no permission</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uni-app怎么返回上一页"><span class="nav-number">15.</span> <span class="nav-text">uni-app怎么返回上一页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uni-app-页面-amp-组件生命周期"><span class="nav-number">16.</span> <span class="nav-text">uni-app 页面&amp;组件生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nodejs利用string-random生成指定的随机字符串"><span class="nav-number">17.</span> <span class="nav-text">nodejs利用string-random生成指定的随机字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在同一个sql语句中，统计不同条件的Count数量"><span class="nav-number">18.</span> <span class="nav-text">在同一个sql语句中，统计不同条件的Count数量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信小程序主要的点"><span class="nav-number">19.</span> <span class="nav-text">微信小程序主要的点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL数据库表结构设计：小程序商城-用户表"><span class="nav-number">20.</span> <span class="nav-text">MySQL数据库表结构设计：小程序商城-用户表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql用户·角色·权限·表的设计"><span class="nav-number">21.</span> <span class="nav-text">Mysql用户·角色·权限·表的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字group-by-、-Having的-用法"><span class="nav-number">22.</span> <span class="nav-text">关键字group by 、 Having的 用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sql去重；同一条数据出现多条取一条的sql语句"><span class="nav-number">23.</span> <span class="nav-text">sql去重；同一条数据出现多条取一条的sql语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript中将字符串true或false转换成Boolean类型"><span class="nav-number">24.</span> <span class="nav-text">JavaScript中将字符串true或false转换成Boolean类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uni-app-生命周期函数"><span class="nav-number">25.</span> <span class="nav-text">uni-app 生命周期函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#百度AI人脸识别、活体检测的坑"><span class="nav-number">26.</span> <span class="nav-text">百度AI人脸识别、活体检测的坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EGG-怎么接入微信支付"><span class="nav-number">27.</span> <span class="nav-text">EGG 怎么接入微信支付</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#怎么接收微信的回调接口"><span class="nav-number">27.1.</span> <span class="nav-text">怎么接收微信的回调接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信小程序获取绑定授权用户手机号getPhoneNumber"><span class="nav-number">28.</span> <span class="nav-text">微信小程序获取绑定授权用户手机号getPhoneNumber</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小程序怎么在代码层面清除缓存"><span class="nav-number">29.</span> <span class="nav-text">小程序怎么在代码层面清除缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniapp中uni-previewImage参数为base64类型图片预览在真机上不显示问题"><span class="nav-number">30.</span> <span class="nav-text">uniapp中uni.previewImage参数为base64类型图片预览在真机上不显示问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Egg-js-实现向服务器上传图片"><span class="nav-number">31.</span> <span class="nav-text">Egg.js 实现向服务器上传图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uni-app里用v-html渲染的图片怎么改大小"><span class="nav-number">32.</span> <span class="nav-text">uni-app里用v-html渲染的图片怎么改大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字节小程序自定义头部失效"><span class="nav-number">33.</span> <span class="nav-text">字节小程序自定义头部失效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字节小程序解密失败问题"><span class="nav-number">34.</span> <span class="nav-text">字节小程序解密失败问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字节小程序担保支付接入文档-服务端"><span class="nav-number">35.</span> <span class="nav-text">字节小程序担保支付接入文档-服务端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何设计表格？—-产品设计类"><span class="nav-number">36.</span> <span class="nav-text">如何设计表格？— 产品设计类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-中字符串匹配的用法"><span class="nav-number">37.</span> <span class="nav-text">SQL 中字符串匹配的用法</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Wenzy</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wenzy</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

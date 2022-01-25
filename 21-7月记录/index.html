@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wenzhenyi.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="以下内容记录工作中遇到的一些问题，解决方法 07-28JS从数组中获取前5个最大元素12345values &#x3D; [1,65,8,98,689,12,33,2,3,789];var topValues &#x3D; values.sort((a,b) &#x3D;&gt; b-a).slice(0,5);console.log(topValues); &#x2F;&#x2F; [ 1, 2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="7月记录">
+<meta property="og:url" content="https://wenzhenyi.github.io/21-7%E6%9C%88%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="Blog For Wenzy">
+<meta property="og:description" content="以下内容记录工作中遇到的一些问题，解决方法 07-28JS从数组中获取前5个最大元素12345values &#x3D; [1,65,8,98,689,12,33,2,3,789];var topValues &#x3D; values.sort((a,b) &#x3D;&gt; b-a).slice(0,5);console.log(topValues); &#x2F;&#x2F; [ 1, 2">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-01T06:52:57.000Z">
+<meta property="article:modified_time" content="2021-08-05T07:14:04.744Z">
+<meta property="article:author" content="Wenzy">
+<meta property="article:tag" content="月份记录">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://wenzhenyi.github.io/21-7%E6%9C%88%E8%AE%B0%E5%BD%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>7月记录 | Blog For Wenzy</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Blog For Wenzy" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Blog For Wenzy</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wenzhenyi.github.io/21-7%E6%9C%88%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Wenzy">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog For Wenzy">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          7月记录
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-01 14:52:57" itemprop="dateCreated datePublished" datetime="2021-07-01T14:52:57+08:00">2021-07-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-05 15:14:04" itemprop="dateModified" datetime="2021-08-05T15:14:04+08:00">2021-08-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>以下内容记录工作中遇到的一些问题，解决方法</p>
+<h2 id="07-28"><a href="#07-28" class="headerlink" title="07-28"></a>07-28</h2><h3 id="JS从数组中获取前5个最大元素"><a href="#JS从数组中获取前5个最大元素" class="headerlink" title="JS从数组中获取前5个最大元素"></a>JS从数组中获取前5个最大元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">values &#x3D; [1,65,8,98,689,12,33,2,3,789];</span><br><span class="line"></span><br><span class="line">var topValues &#x3D; values.sort((a,b) &#x3D;&gt; b-a).slice(0,5);</span><br><span class="line"></span><br><span class="line">console.log(topValues); &#x2F;&#x2F; [ 1, 2, 3, 8, 12 ]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Echarts中markPoint大小随内容值变化"><a href="#Echarts中markPoint大小随内容值变化" class="headerlink" title="Echarts中markPoint大小随内容值变化"></a>Echarts中markPoint大小随内容值变化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">markPoint: &#123;</span><br><span class="line">    &#x2F;&#x2F; 根据当前某项数据确定标注容器宽高。若为0，固定为40；若非0，其数值位数少于等于4位，固定为 66 ，否则 位数*14 作为其宽高</span><br><span class="line">    symbolSize: (e, e1) &#x3D;&gt; e ? e.toString().length &lt;&#x3D; 4 ? 66 : e.toString().length * 14 : 40,</span><br><span class="line">    data: [</span><br><span class="line">        &#123; type: &#39;max&#39;, name: &#39;高峰期&#39; &#125;,</span><br><span class="line">        &#123; type: &#39;min&#39;, name: &#39;空闲期&#39; &#125;</span><br><span class="line">    ],</span><br><span class="line">    label: &#123;</span><br><span class="line">        show: true,</span><br><span class="line">        color: &quot;#f00&quot;,&#x2F;&#x2F;气泡中字体颜色</span><br><span class="line">        fontSize: 12</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">echarts - markPoint</span><br></pre></td></tr></table></figure>
+
+<p>主要关注<code>symbolSize</code>属性</p>
+<h3 id="markPoint的点击事件和点击事件的冲突"><a href="#markPoint的点击事件和点击事件的冲突" class="headerlink" title="markPoint的点击事件和点击事件的冲突"></a>markPoint的点击事件和点击事件的冲突</h3><p>问题1：</p>
+<p>使用了chartIns.getZr().click()后，markPoint的点击事件不触发了。</p>
+<p>markPoint的点击事件怎么触发？</p>
+<p>解决:</p>
+<p>使用chart.click()事件可以触发</p>
+<p>问题2：</p>
+<p>因为点击事件（多表联动）实际代码在getZr()中执行，click执行的是点击之后也需要获取点击的x轴数据进行多表联动。</p>
+<p>因此顺序应该 -&gt; 点击后触发click()事件获取了对应的x值 -&gt; 再触发getZr()事件触发多表联动</p>
+<p>但实际上的顺序是getZr()会更早被执行</p>
+<p>解决：</p>
+<p>方案1：猜测是因为冒泡事件的顺序问题导致，因此使用<code>e.stopPropagation()</code>但是没效果</p>
+<p>方案2：利用async和await方法,用promise函数实现异步</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">chartIns.getZr().on(&#39;click&#39;, async (params) &#x3D;&gt; &#123;</span><br><span class="line">  let &#123; flag, tagParams &#125; &#x3D; await this.getHasTagClick()</span><br><span class="line">  &#x2F;&#x2F; 多表联动</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getHasTagClick() &#123;</span><br><span class="line">  return new Promise((resolve, reject)&#x3D;&gt;&#123;</span><br><span class="line">    setTimeout(()&#x3D;&gt;&#123;</span><br><span class="line">      resolve(this.tagClick)</span><br><span class="line">    &#125;, 0)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h3 id="JS阻止冒泡和取消默认事件-默认行为"><a href="#JS阻止冒泡和取消默认事件-默认行为" class="headerlink" title="JS阻止冒泡和取消默认事件(默认行为)"></a>JS阻止冒泡和取消默认事件(默认行为)</h3><ul>
+<li>事件冒泡</li>
+</ul>
+<p>指的是阻止事件从最里层到外层不断执行click事件，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&#39;div&#39; onclick&#x3D;&#39;alert(&quot;div&quot;);&#39;&gt;</span><br><span class="line">  &lt;ul onclick&#x3D;&#39;alert(&quot;ul&quot;);&#39;&gt;</span><br><span class="line">    &lt;li onclick&#x3D;&#39;alert(&quot;li&quot;);&#39;&gt;test&lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果不组织冒泡，会依次触发alert(“li”),alert(“ul”),alert(“div”)</p>
+<p>w3c的方法是e.stopPropagation()，IE则是使用e.cancelBubble = true</p>
+<p>stopPropagation阻止目标元素的事件冒泡到父级元素</p>
+<ul>
+<li>默认事件</li>
+</ul>
+<p>指的是标签的默认事件或默认行为</p>
+<p>如链接<code>&lt;a&gt;</code>，提交按钮<code>&lt;input type=”submit”&gt;</code>等。当Event 对象的 cancelable为false时，表示没有默认行为，这时即使有默认行为。</p>
+<p>w3c的方法是e.preventDefault()，IE则是使用e.returnValue = false;</p>
+<h3 id="ES6中判断对象是否存在某属性"><a href="#ES6中判断对象是否存在某属性" class="headerlink" title="ES6中判断对象是否存在某属性"></a>ES6中判断对象是否存在某属性</h3><h4 id="链判断操作符"><a href="#链判断操作符" class="headerlink" title="链判断操作符(?.)"></a>链判断操作符(?.)</h4><p>是否存在对象属性(不存在返回undefined且不再往下执行)</p>
+<ul>
+<li>对象属性：obj?.prop、obj?.[expr]</li>
+<li>函数调用：func?.(…args)</li>
+</ul>
+<h4 id="空判断操作符"><a href="#空判断操作符" class="headerlink" title="空判断操作符(??)"></a>空判断操作符(??)</h4><p>是否值为undefined或null，是则使用默认值</p>
+<p>只有运算符左侧的值为null或undefined时，才会返回右侧的值</p>
+<p>const animationDuration = response.settings ?? 300;</p>
+<p>如果多个逻辑运算符一起使用，必须用括号表明优先级，否则会报错。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">lhs &amp;&amp; middle) ?? rhs;</span><br><span class="line">lhs &amp;&amp; (middle ?? rhs);</span><br><span class="line"></span><br><span class="line">(lhs ?? middle) &amp;&amp; rhs;</span><br><span class="line">lhs ?? (middle &amp;&amp; rhs);</span><br><span class="line"></span><br><span class="line">(lhs || middle) ?? rhs;</span><br><span class="line">lhs || (middle ?? rhs);</span><br><span class="line"></span><br><span class="line">(lhs ?? middle) || rhs;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：但是这些需要用babel解析成es5才能被浏览器解析</strong></p>
+<p><a href="https://segmentfault.com/a/1190000020678240" target="_blank" rel="noopener">1.5万字概括ES6全部特性(已更新ES2020)</a></p>
+<h3 id="JS的发布订阅模式"><a href="#JS的发布订阅模式" class="headerlink" title="JS的发布订阅模式"></a>JS的发布订阅模式</h3><p>项目中使用多表联动，用发布订阅模式封装代码是最好的</p>
+<p>发布-订阅模式里面包含了三个模块，发布者，订阅者和处理中心。这里处理中心相当于报刊办事大厅。发布者相当与某个杂志负责人，他来中心这注册一个的杂志，而订阅者相当于用户，我在中心订阅了这分杂志。每当发布者发布了一期杂志，办事大厅就会通知订阅者来拿新杂志。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">class Event &#123;</span><br><span class="line">  constructor () &#123;&#125;</span><br><span class="line">  &#x2F;&#x2F; 首先定义一个事件容器，用来装事件数组（因为订阅者可以是多个）</span><br><span class="line">  handlers &#x3D; &#123;&#125;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 事件添加方法，参数有事件名和事件方法</span><br><span class="line">  addEventListener (type, handler) &#123;</span><br><span class="line">    &#x2F;&#x2F; 首先判断handlers内有没有type事件容器，没有则创建一个新数组容器</span><br><span class="line">    if (!(type in this.handlers)) &#123;</span><br><span class="line">      this.handlers[type] &#x3D; []</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 将事件存入</span><br><span class="line">    this.handlers[type].push(handler)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 触发事件两个参数（事件名，参数）</span><br><span class="line">  dispatchEvent (type, ...params) &#123;</span><br><span class="line">    &#x2F;&#x2F; 若没有注册该事件则抛出错误</span><br><span class="line">    if (!(type in this.handlers)) &#123;</span><br><span class="line">      return new Error(&#39;未注册该事件&#39;)</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 便利触发</span><br><span class="line">    this.handlers[type].forEach(handler &#x3D;&gt; &#123;</span><br><span class="line">      handler(...params)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 事件移除参数（事件名，删除的事件，若无第二个参数则删除该事件的订阅和发布）</span><br><span class="line">  removeEventListener (type, handler) &#123;</span><br><span class="line">      &#x2F;&#x2F; 无效事件抛出</span><br><span class="line">      if (!(type in this.handlers)) &#123;</span><br><span class="line">        return new Error(&#39;无效事件&#39;)</span><br><span class="line">      &#125;</span><br><span class="line">      if (!handler) &#123;</span><br><span class="line">        &#x2F;&#x2F; 直接移除事件</span><br><span class="line">        delete this.handlers[type]</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        const idx &#x3D; this.handlers[type].findIndex(ele &#x3D;&gt; ele &#x3D;&#x3D;&#x3D; handler)</span><br><span class="line">        &#x2F;&#x2F; 抛出异常事件</span><br><span class="line">        if (idx &#x3D;&#x3D;&#x3D; undefined) &#123;</span><br><span class="line">          return new Error(&#39;无该绑定事件&#39;)</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F; 移除事件</span><br><span class="line">        this.handlers[type].splice(idx, 1)</span><br><span class="line">        if (this.handlers[type].length &#x3D;&#x3D;&#x3D; 0) &#123;</span><br><span class="line">          delete this.handlers[type]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var event &#x3D; new Event() &#x2F;&#x2F; 创建event实例</span><br><span class="line">&#x2F;&#x2F; 定义一个自定义事件:&quot;load&quot;</span><br><span class="line">function load (params) &#123;</span><br><span class="line">  console.log(&#39;load&#39;, params)</span><br><span class="line">&#125;</span><br><span class="line">event.addEventListener(&#39;load&#39;, load)</span><br><span class="line">&#x2F;&#x2F; 再定义一个load事件</span><br><span class="line">function load2 (params) &#123;</span><br><span class="line">  console.log(&#39;load2&#39;, params)</span><br><span class="line">&#125;</span><br><span class="line">event.addEventListener(&#39;load&#39;, load2)</span><br><span class="line">&#x2F;&#x2F; 触发该事件</span><br><span class="line">event.dispatchEvent(&#39;load&#39;, &#39;load事件触发&#39;)</span><br><span class="line">&#x2F;&#x2F; 移除load2事件</span><br><span class="line">event.removeEventListener(&#39;load&#39;, load2)</span><br><span class="line">&#x2F;&#x2F; 移除所有load事件</span><br><span class="line">event.removeEventListener(&#39;load&#39;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="npm常用模块之cross-env使用"><a href="#npm常用模块之cross-env使用" class="headerlink" title="npm常用模块之cross-env使用"></a>npm常用模块之cross-env使用</h3><p>cross-env这是一款运行跨平台设置和使用环境变量的脚本</p>
+<p>NODE_ENV=production像这样设置环境变量时，大多数Windows命令提示符都会阻塞 。（Windows上的Bash是例外，它使用本机Bash。）同样，Windows和POSIX命令使用环境变量的方式也有所不同。对于POSIX，您可以使用：$ENV_VAR 和在Windows上可以使用%ENV_VAR%。</p>
+<p>cross-env这样，您就可以使用单个命令，而不必担心为平台正确设置或使用环境变量。就像在POSIX系统上运行时一样，只需对其进行设置即可，并且cross-env会妥善设置。</p>
+<h3 id="Echarts去掉markPoint点"><a href="#Echarts去掉markPoint点" class="headerlink" title="Echarts去掉markPoint点"></a>Echarts去掉markPoint点</h3><p>把markPoint的data置为<code>[]</code></p>
+<p>在Echarts5中，产生markPoint后再缩放，再点击legend的其他选项</p>
+<p>之前的点会遗留在图表上（可能是echarts5的bug）</p>
+<p>解决：放到echarts4版本上没问题</p>
+<h3 id="生产环境打包后image-gallery组件提示-Super-expression-must-either-be-null-or-a-function"><a href="#生产环境打包后image-gallery组件提示-Super-expression-must-either-be-null-or-a-function" class="headerlink" title="生产环境打包后image-gallery组件提示 Super expression must either be null or a function"></a>生产环境打包后image-gallery组件提示 Super expression must either be null or a function</h3><p>问题出现：</p>
+<p>经过webpack打包后，development环境下没问题，但是到了生产环境上出现上述错误</p>
+<p>百度后:</p>
+<p>回答1：组件继承的写法有问题：</p>
+<p>错误写法：<br><code>class Fn extends React.Component() {}</code></p>
+<p><code>class Fn extends React.component {}</code></p>
+<p>正确写法：<br><code>class Fn extends React.Component {}</code></p>
+<p>但排查后没问题</p>
+<p>自查：</p>
+<p>排查后发现是webpack打包中因为<code>mode</code>改成<code>production</code>后出现问题，在生产环境的配置中把<code>mode: development</code>后执行没问题。</p>
+<p>因此，需要了解这两个模式做了什么</p>
+<p>最终解决：</p>
+<p>使用<code>UglifyjsWebpackPlugin</code>代替<code>TerserWebpackPlugin</code>进行代码压缩的配置</p>
+<h3 id="webpakc中mode的区别"><a href="#webpakc中mode的区别" class="headerlink" title="webpakc中mode的区别"></a>webpakc中mode的区别</h3><p>官网解释：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>development</td>
+<td>会将 DefinePlugin 中 process.env.NODE_ENV 的值设置为 development。启用 NamedChunksPlugin 和 NamedModulesPlugin。</td>
+</tr>
+<tr>
+<td>production</td>
+<td>会将 DefinePlugin 中 process.env.NODE_ENV 的值设置为 production。启用 FlagDependencyUsagePlugin, FlagIncludedChunksPlugin, ModuleConcatenationPlugin, NoEmitOnErrorsPlugin, OccurrenceOrderPlugin, SideEffectsFlagPlugin 和 TerserPlugin。</td>
+</tr>
+<tr>
+<td>none</td>
+<td>退出任何默认优化选项</td>
+</tr>
+</tbody></table>
+<p><a href="https://v4.webpack.docschina.org/concepts/mode/#mode-production" target="_blank" rel="noopener">webpack官网解释</a></p>
+<p>在正式版本中，所省略的插件，如下所示:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; webpack.production.config.js</span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">+  mode: &#39;production&#39;,</span><br><span class="line">-  plugins: [</span><br><span class="line">-    new UglifyJsPlugin(&#x2F;* ... *&#x2F;),</span><br><span class="line">-    new webpack.DefinePlugin(&#123; &quot;process.env.NODE_ENV&quot;: JSON.stringify(&quot;production&quot;) &#125;),</span><br><span class="line">-    new webpack.optimize.ModuleConcatenationPlugin(),</span><br><span class="line">-    new webpack.NoEmitOnErrorsPlugin()</span><br><span class="line">-  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="UglifyJsPlugin"><a href="#UglifyJsPlugin" class="headerlink" title="UglifyJsPlugin"></a>UglifyJsPlugin</h4><p>我们第一个需要处理的就要混淆&amp;压缩JS了吧，这个时候就要请出<code>UglifyJs</code>了，在webpack中他的名字是<code>const UglifyJsPlugin = require(&#39;uglifyjs-webpack-plugin&#39;);</code>，这样就可以使用他了。</p>
+<p>不过<code>new UglifyJsPlugin()</code>，这个插件我们可以在<code>optimize</code>中配置，效果是一样的，那么我们是不是就不用再导入一个新的插件了，这样反而会拖慢webpack的就打包速度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">optimization:&#123;</span><br><span class="line">    minimize: true,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>将插件去除，混淆压缩放入optimization，这样webpack速度快的飞起了。只有第一次打包会慢，之后再打包就快了</p>
+<h4 id="ModuleConcatenationPlugin"><a href="#ModuleConcatenationPlugin" class="headerlink" title="ModuleConcatenationPlugin"></a>ModuleConcatenationPlugin</h4><p><code>webpack.optimize.ModuleConcatenationPlugin()</code>这个插件的作用是什么呢？官方文档上是这么描述的：</p>
+<blockquote>
+<p>记住，此插件仅适用于由 webpack 直接处理的 ES6 模块。在使用转译器(transpiler)时，你需要禁用对模块的处理（例如 Babel 中的 modules 选项）。</p>
+</blockquote>
+<h4 id="NoEmitOnErrorsPlugin"><a href="#NoEmitOnErrorsPlugin" class="headerlink" title="NoEmitOnErrorsPlugin"></a>NoEmitOnErrorsPlugin</h4><p>这个就是用于防止程序报错，就算有错误也给我继续编译，很暴力的做法呢。</p>
+<h4 id="others"><a href="#others" class="headerlink" title="others"></a>others</h4><p>还有一些默认的插件配置，也就是可以不在plugins中引用的配置：</p>
+<h5 id="flagIncludedChunks"><a href="#flagIncludedChunks" class="headerlink" title="flagIncludedChunks"></a>flagIncludedChunks</h5><p>flagIncludedChunks这个配置的作用是，看结果：</p>
+<p>未启用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> Asset       Size  Chunks             Chunk Names</span><br><span class="line">index.js   1.02 KiB       0  [emitted]  index</span><br><span class="line">page1.js  970 bytes       1  [emitted]  page1</span><br></pre></td></tr></table></figure>
+
+<p>启用后，如果只有二个文件似乎表现不明显，于是我增加了三个文件，page1调用page2，index调用page1，那么一目了然，在这里的chunks就是所有引用模块的id。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> Asset       Size   Chunks             Chunk Names</span><br><span class="line">index.js   1.08 KiB  0, 1, 2  [emitted]  index</span><br><span class="line">page1.js   1.01 KiB     1, 2  [emitted]  page1</span><br><span class="line">page2.js  971 bytes        2  [emitted]  page2</span><br></pre></td></tr></table></figure>
+
+<h5 id="OccurrenceOrderPlugin"><a href="#OccurrenceOrderPlugin" class="headerlink" title="OccurrenceOrderPlugin"></a>OccurrenceOrderPlugin</h5><p><code>webpack.optimize.OccurrenceOrderPlugin</code>这个插件的作用是按照chunk引用次数来安排出现顺序，因为这让经常引用的模块和chunk拥有更小的id。将上面的例子加上这个配置运行下就是这样的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   Asset       Size   Chunks             Chunk Names</span><br><span class="line">page2.js  969 bytes        0  [emitted]  page2</span><br><span class="line">page1.js   1.01 KiB     1, 0  [emitted]  page1</span><br><span class="line">index.js   1.08 KiB  2, 0, 1  [emitted]  index</span><br></pre></td></tr></table></figure>
+
+<h5 id="SideEffectsFlagPlugin"><a href="#SideEffectsFlagPlugin" class="headerlink" title="SideEffectsFlagPlugin"></a>SideEffectsFlagPlugin</h5><p><code>webpack.optimize.SideEffectsFlagPlugin()</code>这个插件如果需要生效的话，需要两个条件，一个是导入的模块已经标记了sideEffect，即package.json中的sideEffects这个属性为false，第二个就是当前模块引用了次无副作用的模块，而且没有使用。那么在打包的时候，就不会将这个模块打包到文件中。</p>
+<p>总结</p>
+<p>实际上production mode下，与官方文档相比，他的配置更加等同于如下配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    mode:&quot;none&quot;,</span><br><span class="line">    optimization:&#123;</span><br><span class="line">        flagIncludedChunks:true,</span><br><span class="line">        minimize: true,</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        new webpack.DefinePlugin(&#123; &quot;process.env.NODE_ENV&quot;: JSON.stringify(&quot;production&quot;) &#125;),</span><br><span class="line">        new webpack.optimize.ModuleConcatenationPlugin(),</span><br><span class="line">        new webpack.NoEmitOnErrorsPlugin(),</span><br><span class="line">        new webpack.optimize.SideEffectsFlagPlugin()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>production各插件参考文档</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>effect</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FlagDependencyUsagePlugin</td>
+<td>标记没有用到的依赖，这个插件无法通过webpack获取，我只能通过强行导入webpack/lib下的class文件来导入。</td>
+</tr>
+<tr>
+<td>SideEffectsFlagPlugin</td>
+<td>用于处理tree shaking的,tree shaking，sideEffect这个插件的作用就是，如果当前的模块没有引用，而且package.json中的sideEffects为false，那么打包的时候就可以将此包剔除。stackoverflow上有用的答案</td>
+</tr>
+<tr>
+<td>FlagIncludedChunksPlugin</td>
+<td>给当前chunk包含的chunkid加入chunk名之中</td>
+</tr>
+<tr>
+<td>ModuleConcatenationPlugin</td>
+<td>作用域提升</td>
+</tr>
+<tr>
+<td>NoEmitOnErrorsPlugin</td>
+<td>阻止任何报错</td>
+</tr>
+<tr>
+<td>OccurrenceOrderPlugin</td>
+<td>按照调用次数来给chunks排序</td>
+</tr>
+<tr>
+<td>UglifyJsPlugin</td>
+<td>混淆压缩</td>
+</tr>
+</tbody></table>
+<p>参考：</p>
+<p><a href="https://www.cnblogs.com/cherryvenus/p/9808320.html" target="_blank" rel="noopener">显微镜下的webpack4的新特性：mode详解</a></p>
+<h3 id="production-模式启用的插件"><a href="#production-模式启用的插件" class="headerlink" title="production 模式启用的插件"></a>production 模式启用的插件</h3><h4 id="FlagDependencyUsagePlugin"><a href="#FlagDependencyUsagePlugin" class="headerlink" title="FlagDependencyUsagePlugin"></a>FlagDependencyUsagePlugin</h4><ul>
+<li><p>触发时机：compilation.hooks.optimizeDependencies</p>
+</li>
+<li><p>功能：标记模块导出中被使用的导出，存在 module.usedExports 里。用于 Tree shaking。</p>
+</li>
+<li><p>对应配置项：optimization.usedExports:true</p>
+</li>
+</ul>
+<h4 id="FlagIncludedChunksPlugin"><a href="#FlagIncludedChunksPlugin" class="headerlink" title="FlagIncludedChunksPlugin"></a>FlagIncludedChunksPlugin</h4><ul>
+<li><p>触发时机：compilation.hooks.optimizeChunkId</p>
+</li>
+<li><p>功能：给每个 chunk 添加了 ids，用于判断避免加载不必要的 chunk</p>
+</li>
+</ul>
+<h4 id="ModuleConcatenationPlugin-1"><a href="#ModuleConcatenationPlugin-1" class="headerlink" title="ModuleConcatenationPlugin"></a>ModuleConcatenationPlugin</h4><ul>
+<li><p>触发时机：compilation.hooks.optimizeChunkModules</p>
+</li>
+<li><p>功能：使用 esm 语法可以作用域提升(Scope Hoisting)或预编译所有模块到一个闭包中，提升代码在浏览器中的执行速度</p>
+</li>
+<li><p>对应配置项：optimization.concatenateModules:true</p>
+</li>
+</ul>
+<h4 id="NoEmitOnErrorsPlugin-1"><a href="#NoEmitOnErrorsPlugin-1" class="headerlink" title="NoEmitOnErrorsPlugin"></a>NoEmitOnErrorsPlugin</h4><ul>
+<li><p>触发时机：compiler.hooks.shouldEmit，compilation.hooks.shouldRecord</p>
+</li>
+<li><p>功能：如果在 compilation 编译时有 error，则不执行 Record 相关的钩子，并且抛错和不编译资源</p>
+</li>
+</ul>
+<h4 id="OccurrenceOrderModuleIdsPlugin，OccurrenceOrderChunkIdsPlugin"><a href="#OccurrenceOrderModuleIdsPlugin，OccurrenceOrderChunkIdsPlugin" class="headerlink" title="OccurrenceOrderModuleIdsPlugin，OccurrenceOrderChunkIdsPlugin"></a>OccurrenceOrderModuleIdsPlugin，OccurrenceOrderChunkIdsPlugin</h4><p>注意不是文档写的 OccurrenceOrderPlugin，这个没用</p>
+<ul>
+<li><p>触发时机：compilation.hooks.optimizeModuleOrder，compilation.hooks.optimizeChunkOrder</p>
+</li>
+<li><p>功能：根据模块初始调用次数或者总调用次数排序（配置），这样在后面分配 ID 的时候常被调用 ID 就靠前，除此之外，还可以让 id 为路径，hash 等。</p>
+</li>
+<li><p>对应配置项：optimization.occurrenceOrder，optimization.chunkIds，optimization.moduleIds</p>
+</li>
+</ul>
+<h4 id="SideEffectsFlagPlugin-1"><a href="#SideEffectsFlagPlugin-1" class="headerlink" title="SideEffectsFlagPlugin"></a>SideEffectsFlagPlugin</h4><ul>
+<li><p>触发时机：normalModuleFactory.hooks.module，compilation.hooks.optimizeDependencies</p>
+</li>
+<li><p>功能：<br>normalModuleFactory.hooks.module 钩子里读取 package.json 里的 sideEffects 字段和读取 module.rule 里的 sideEffects 赋给 module.factoryMeta（纯的 ES2015 模块)；<br>compilation.hooks.optimizeDependencies 钩子里根据 sideEffects 配置，删除未用到的 export 导出</p>
+</li>
+<li><p>对应配置项：optimization.sideEffects:true（默认）</p>
+</li>
+<li><p>TerserPlugin</p>
+</li>
+<li><p>触发时机：template.hooks.hashForChunk，compilation.hooks.optimizeChunkAssets</p>
+</li>
+<li><p>功能：<br>在 template.hooks.hashForChunk 钩子即在 chunks 生成 hash 阶段会把压缩相关的信息也打入到里面<br>在 compilation.hooks.optimizeChunkAssets 钩子触发资源压缩事件</p>
+</li>
+<li><p>对应配置项：<br>optimization.minimize 是否开启压缩<br>optimization.minimizer 定制 Terser</p>
+</li>
+</ul>
+<p>另：development 模式单独启用的插件：</p>
+<h4 id="NamedChunksPlugin"><a href="#NamedChunksPlugin" class="headerlink" title="NamedChunksPlugin"></a>NamedChunksPlugin</h4><ul>
+<li>触发时机：compilation.hooks.beforeChunkIds</li>
+<li>功能：以名称固化 chunk id</li>
+<li>对应配置项：optimization.chunkIds</li>
+</ul>
+<h4 id="NamedModulesPlugin"><a href="#NamedModulesPlugin" class="headerlink" title="NamedModulesPlugin"></a>NamedModulesPlugin</h4><ul>
+<li>触发时机：compilation.hooks.beforeModuleIds</li>
+<li>功能：以名称固化 module id</li>
+<li>对应配置项：optimization.moduleIds</li>
+</ul>
+<p>参考：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/102632472" target="_blank" rel="noopener">webpack 4 源码主流程分析（十四）：webpack 优化</a></p>
+<h3 id="Webpack-插件扫盲-–-WorkboxWebpackPlugin"><a href="#Webpack-插件扫盲-–-WorkboxWebpackPlugin" class="headerlink" title="Webpack 插件扫盲 – WorkboxWebpackPlugin"></a>Webpack 插件扫盲 – WorkboxWebpackPlugin</h3><p>需先了解service worker和PWA</p>
+<p><a href="https://blog.csdn.net/qq_29722281/article/details/111873764" target="_blank" rel="noopener">service worker</a></p>
+<p><a href="https://blog.csdn.net/qq_29722281/article/details/111935022" target="_blank" rel="noopener">PWA</a></p>
+<h3 id="webpack压缩js代码插件"><a href="#webpack压缩js代码插件" class="headerlink" title="webpack压缩js代码插件"></a>webpack压缩js代码插件</h3><p>webpack.TerserWebpackPlugin 和</p>
+<p>webpack.UglifyjsWebpackPlugin插件</p>
+<p><a href="https://blog.csdn.net/qq_29722281/article/details/109489930" target="_blank" rel="noopener">https://blog.csdn.net/qq_29722281/article/details/109489930</a></p>
+<h3 id="浅析js中的纯函数、高阶函数、记忆函数、偏函数"><a href="#浅析js中的纯函数、高阶函数、记忆函数、偏函数" class="headerlink" title="浅析js中的纯函数、高阶函数、记忆函数、偏函数"></a>浅析js中的纯函数、高阶函数、记忆函数、偏函数</h3>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%88%E4%BB%BD%E8%AE%B0%E5%BD%95/" rel="tag"># 月份记录</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/css%E7%89%B9%E6%AE%8A%E6%80%A7/" rel="prev" title="css特殊性">
+      <i class="fa fa-chevron-left"></i> css特殊性
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AAPromise/" rel="next" title="手写一个Promise">
+      手写一个Promise <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#07-28"><span class="nav-number">1.</span> <span class="nav-text">07-28</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS从数组中获取前5个最大元素"><span class="nav-number">1.1.</span> <span class="nav-text">JS从数组中获取前5个最大元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Echarts中markPoint大小随内容值变化"><span class="nav-number">1.2.</span> <span class="nav-text">Echarts中markPoint大小随内容值变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#markPoint的点击事件和点击事件的冲突"><span class="nav-number">1.3.</span> <span class="nav-text">markPoint的点击事件和点击事件的冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS阻止冒泡和取消默认事件-默认行为"><span class="nav-number">1.4.</span> <span class="nav-text">JS阻止冒泡和取消默认事件(默认行为)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6中判断对象是否存在某属性"><span class="nav-number">1.5.</span> <span class="nav-text">ES6中判断对象是否存在某属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#链判断操作符"><span class="nav-number">1.5.1.</span> <span class="nav-text">链判断操作符(?.)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空判断操作符"><span class="nav-number">1.5.2.</span> <span class="nav-text">空判断操作符(??)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS的发布订阅模式"><span class="nav-number">1.6.</span> <span class="nav-text">JS的发布订阅模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm常用模块之cross-env使用"><span class="nav-number">1.7.</span> <span class="nav-text">npm常用模块之cross-env使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Echarts去掉markPoint点"><span class="nav-number">1.8.</span> <span class="nav-text">Echarts去掉markPoint点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生产环境打包后image-gallery组件提示-Super-expression-must-either-be-null-or-a-function"><span class="nav-number">1.9.</span> <span class="nav-text">生产环境打包后image-gallery组件提示 Super expression must either be null or a function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpakc中mode的区别"><span class="nav-number">1.10.</span> <span class="nav-text">webpakc中mode的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UglifyJsPlugin"><span class="nav-number">1.10.1.</span> <span class="nav-text">UglifyJsPlugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ModuleConcatenationPlugin"><span class="nav-number">1.10.2.</span> <span class="nav-text">ModuleConcatenationPlugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NoEmitOnErrorsPlugin"><span class="nav-number">1.10.3.</span> <span class="nav-text">NoEmitOnErrorsPlugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#others"><span class="nav-number">1.10.4.</span> <span class="nav-text">others</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#flagIncludedChunks"><span class="nav-number">1.10.4.1.</span> <span class="nav-text">flagIncludedChunks</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#OccurrenceOrderPlugin"><span class="nav-number">1.10.4.2.</span> <span class="nav-text">OccurrenceOrderPlugin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SideEffectsFlagPlugin"><span class="nav-number">1.10.4.3.</span> <span class="nav-text">SideEffectsFlagPlugin</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#production-模式启用的插件"><span class="nav-number">1.11.</span> <span class="nav-text">production 模式启用的插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FlagDependencyUsagePlugin"><span class="nav-number">1.11.1.</span> <span class="nav-text">FlagDependencyUsagePlugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FlagIncludedChunksPlugin"><span class="nav-number">1.11.2.</span> <span class="nav-text">FlagIncludedChunksPlugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ModuleConcatenationPlugin-1"><span class="nav-number">1.11.3.</span> <span class="nav-text">ModuleConcatenationPlugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NoEmitOnErrorsPlugin-1"><span class="nav-number">1.11.4.</span> <span class="nav-text">NoEmitOnErrorsPlugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OccurrenceOrderModuleIdsPlugin，OccurrenceOrderChunkIdsPlugin"><span class="nav-number">1.11.5.</span> <span class="nav-text">OccurrenceOrderModuleIdsPlugin，OccurrenceOrderChunkIdsPlugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SideEffectsFlagPlugin-1"><span class="nav-number">1.11.6.</span> <span class="nav-text">SideEffectsFlagPlugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NamedChunksPlugin"><span class="nav-number">1.11.7.</span> <span class="nav-text">NamedChunksPlugin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NamedModulesPlugin"><span class="nav-number">1.11.8.</span> <span class="nav-text">NamedModulesPlugin</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Webpack-插件扫盲-–-WorkboxWebpackPlugin"><span class="nav-number">1.12.</span> <span class="nav-text">Webpack 插件扫盲 – WorkboxWebpackPlugin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack压缩js代码插件"><span class="nav-number">1.13.</span> <span class="nav-text">webpack压缩js代码插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浅析js中的纯函数、高阶函数、记忆函数、偏函数"><span class="nav-number">1.14.</span> <span class="nav-text">浅析js中的纯函数、高阶函数、记忆函数、偏函数</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Wenzy</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wenzy</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
