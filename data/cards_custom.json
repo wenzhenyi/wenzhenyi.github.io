@@ -1,0 +1,58 @@
+[
+  {
+    "id": "swsh12pt5-160",
+    "set": "swsh12pt5",
+    "name": "Pikachu",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Lightning"],
+    "number": "160",
+    "rarity": "Rare Secret",
+    "images": {
+      "small": "https://images.pokemontcg.io/swsh12pt5/160.png",
+      "large": "https://images.pokemontcg.io/swsh12pt5/160_hires.png"
+    }
+  },
+  {
+    "id": "sm10-33",
+    "set": "sm10",
+    "name": "Squirtle",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Water"],
+    "number": "33",
+    "rarity": "Common",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm10/33.png",
+      "large": "https://images.pokemontcg.io/sm10/33_hires.png"
+    }
+  },
+  {
+    "id": "sm115-7",
+    "set": "sm115",
+    "name": "Charmander",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Fire"],
+    "number": "7",
+    "rarity": "Common",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm115/7.png",
+      "large": "https://images.pokemontcg.io/sm115/7_hires.png"
+    }
+  },
+  {
+    "id": "sm35-1",
+    "set": "sm35",
+    "name": "Bulbasaur",
+    "supertype": "Pokémon",
+    "subtypes": ["Basic"],
+    "types": ["Grass"],
+    "number": "1",
+    "rarity": "Common",
+    "images": {
+      "small": "https://images.pokemontcg.io/sm35/1.png",
+      "large": "https://images.pokemontcg.io/sm35/1_hires.png"
+    }
+  }
+]
